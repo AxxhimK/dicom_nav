@@ -85,6 +85,8 @@ class OverlayView(context: Context?, attrs: AttributeSet?) :
         }
     }
 
+    // comment
+
     fun setResults(
         gestureRecognizerResult: GestureRecognizerResult,
         imageHeight: Int,
