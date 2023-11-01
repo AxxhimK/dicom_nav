@@ -1,30 +1,27 @@
-/*
- * Copyright 2022 The TensorFlow Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *             http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.google.mediapipe.examples.gesturerecognizer
 
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainBinding
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
+import com.google.mediapipe.tasks.components.containers.Category
+import com.pixelmed.dicom.AttributeList
+import com.pixelmed.dicom.DicomInputStream
+import com.pixelmed.display.SourceImage
+import java.io.InputStream
+import java.nio.IntBuffer
 
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
+    //private lateinit var imageHandler: ImageHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,9 +35,29 @@ class MainActivity : AppCompatActivity() {
         activityMainBinding.navigation.setOnNavigationItemReselectedListener {
             // ignore the reselection
         }
-    }
+        /*
+        val imageView = findViewById<ImageView>(R.id.imageView)
+        imageHandler.nextImage(imageView) // Load initial image
 
+        activityMainBinding.buttonNext.setOnClickListener {
+            imageHandler.nextImage(imageView)
+        }
+        activityMainBinding.buttonPrevious.setOnClickListener {
+            imageHandler.previousImage(imageView)
+        }
+        //activityMainBinding.imageView
+
+    */
+    }
     override fun onBackPressed() {
         finish()
     }
+/*
+    override fun nextImage() {
+        imageHandler.nextImage(activityMainBinding.imageView)
+    }
+    override fun previousImage() {
+    }
+    */
+
 }

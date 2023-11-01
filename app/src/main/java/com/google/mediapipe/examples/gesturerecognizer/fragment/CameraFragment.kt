@@ -1,28 +1,15 @@
-/*
- * Copyright 2022 The TensorFlow Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *             http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.google.mediapipe.examples.gesturerecognizer.fragment
 
 import android.annotation.SuppressLint
 import android.content.res.Configuration
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -32,10 +19,12 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
+import com.google.mediapipe.examples.gesturerecognizer.ImageHandler
 import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
 import com.google.mediapipe.examples.gesturerecognizer.R
 import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
 import com.google.mediapipe.tasks.vision.core.RunningMode
+import com.pixelmed.dicom.DicomDirectoryRecordType.image
 import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
@@ -66,6 +55,31 @@ class CameraFragment : Fragment(),
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
+    private val imageResourceIds = arrayOf(
+        R.drawable.black,
+        R.drawable.blue,
+        R.drawable.green,
+        R.drawable.red,
+        R.drawable.purple,
+        R.drawable.yellow,
+        R.drawable.turq
+    )
+    private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
+    private lateinit var imageViewDisplay: ImageView
+
+
+    // Bilder von Resources laden
+    fun loadImageFromResource(imageView: ImageView) {
+        imageView.setImageResource(imageResourceIds[currentImageIndex])
+    }
+    fun nextImage() {
+       currentImageIndex = (currentImageIndex + 1) % imageResourceIds.size //nächstes Bild (Berechnung hinzufügen)
+        loadImageFromResource(imageViewDisplay)
+    }
+    fun previousImage() {
+        currentImageIndex = if (currentImageIndex - 1 < 0) imageResourceIds.size - 1 else currentImageIndex - 1
+        loadImageFromResource(imageViewDisplay)
+    }
 
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
@@ -157,6 +171,12 @@ class CameraFragment : Fragment(),
 
         // Attach listeners to UI control widgets
         initBottomSheetControls()
+
+        imageViewDisplay = fragmentCameraBinding.imageView
+        loadImageFromResource(imageViewDisplay)
+        fragmentCameraBinding.buttonNext.setOnClickListener { nextImage() }
+        fragmentCameraBinding.buttonNext.setOnClickListener { previousImage() }
+
     }
 
     private fun initBottomSheetControls() {
@@ -367,9 +387,32 @@ class CameraFragment : Fragment(),
                     gestureRecognizerResultAdapter.updateResults(
                         gestureCategories.first()
                     )
-                } else {
-                    gestureRecognizerResultAdapter.updateResults(emptyList())
-                }
+                    if(gestureCategories.first().isNotEmpty()) {
+
+                        val sortedCategories =
+                            gestureCategories.first().sortedByDescending { it.score() }
+                        if (sortedCategories.isNotEmpty()) {
+                            val category = sortedCategories.first().categoryName()
+                            when (category) {
+                                "Thumb_Up" -> fragmentCameraBinding.buttonNext.setOnClickListener {
+                                    nextImage()
+                                }
+                                //"Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
+                                //"Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
+
+                            }/*
+                            if(category.equals("Thumb_Up")) {
+                                fragmentCameraBinding.overlay.setNextColor(Color.RED);
+                            } else if(category.equals("Thumb_Down")) {
+                                fragmentCameraBinding.overlay.setNextColor(Color.MAGENTA);
+                            } else {
+                                fragmentCameraBinding.overlay.setNextColor(Color.YELLOW);
+                            }*/
+                        }
+                    }
+                        } else {
+                            gestureRecognizerResultAdapter.updateResults(emptyList())
+                        }
 
                 fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
                     String.format("%d ms", resultBundle.inferenceTime)
@@ -399,5 +442,8 @@ class CameraFragment : Fragment(),
                 )
             }
         }
+    }
+    interface ImageChangeAction {
+        //fun nextImage()
     }
 }

@@ -1,23 +1,7 @@
-/*
- * Copyright 2022 The TensorFlow Authors. All Rights Reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *             http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.google.mediapipe.examples.gesturerecognizer
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
@@ -28,8 +12,7 @@ import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
 import kotlin.math.max
 import kotlin.math.min
 
-class OverlayView(context: Context?, attrs: AttributeSet?) :
-    View(context, attrs) {
+class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
     private var results: GestureRecognizerResult? = null
     private var linePaint = Paint()
@@ -39,10 +22,22 @@ class OverlayView(context: Context?, attrs: AttributeSet?) :
     private var imageWidth: Int = 1
     private var imageHeight: Int = 1
 
+    private var thumb_Up = false
+
     init {
         initPaints()
     }
 
+
+    fun setThumbUp(value: Boolean) {
+        thumb_Up = value
+    }
+
+    fun setNextColor(color: Int) {
+        linePaint.color = color
+        pointPaint.color = color
+        invalidate()
+    }
     fun clear() {
         results = null
         linePaint.reset()
@@ -52,40 +47,51 @@ class OverlayView(context: Context?, attrs: AttributeSet?) :
     }
 
     private fun initPaints() {
-        linePaint.color =
-            ContextCompat.getColor(context!!, R.color.mp_color_primary)
+        linePaint.color = ContextCompat.getColor(context!!, R.color.htwGreen)
         linePaint.strokeWidth = LANDMARK_STROKE_WIDTH
         linePaint.style = Paint.Style.STROKE
 
-        pointPaint.color = Color.YELLOW
-        pointPaint.strokeWidth = LANDMARK_STROKE_WIDTH
+        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwBlue)
+        pointPaint.strokeWidth = LANDMARK_POINT_WIDTH
         pointPaint.style = Paint.Style.FILL
     }
 
     override fun draw(canvas: Canvas) {
         super.draw(canvas)
         results?.let { gestureRecognizerResult ->
-            for(landmark in gestureRecognizerResult.landmarks()) {
-                for(normalizedLandmark in landmark) {
-                    canvas.drawPoint(
-                        normalizedLandmark.x() * imageWidth * scaleFactor,
-                        normalizedLandmark.y() * imageHeight * scaleFactor,
-                        pointPaint)
+            for (landmark in gestureRecognizerResult.landmarks()) {
+                for (i in 0 until landmark.size) {
+                    val normalizedLandmark = landmark.get(i)
+                    val x = normalizedLandmark.x() * imageWidth * scaleFactor
+                    val y = normalizedLandmark.y() * imageHeight * scaleFactor
+                    var radius = LANDMARK_POINT_RADIUS //default radius
+
+                    // Check if it's the 4th landmark, and change the color for it
+                    if (i == 4) {
+                        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwOrange)
+                        radius = LARGE_LANDMARK_POINT_RADIUS
+                    } else {
+                        // Set the color for all other landmarks as green
+                        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwGreen)
+                    }
+
+                    canvas.drawCircle(x, y, radius, pointPaint)
+                }
+                // draw-Methode (drawRect o.ä.) mit if Bedingung, canvas.draw...
+                if(thumb_Up) {
+                    canvas.drawRect(200.0f, 200.0f, 2000.0f, 2000.0f, pointPaint)
                 }
 
                 HandLandmarker.HAND_CONNECTIONS.forEach {
-                    canvas.drawLine(
-                        gestureRecognizerResult.landmarks().get(0).get(it!!.start()).x() * imageWidth * scaleFactor,
-                        gestureRecognizerResult.landmarks().get(0).get(it.start()).y() * imageHeight * scaleFactor,
-                        gestureRecognizerResult.landmarks().get(0).get(it.end()).x() * imageWidth * scaleFactor,
-                        gestureRecognizerResult.landmarks().get(0).get(it.end()).y() * imageHeight * scaleFactor,
-                        linePaint)
+                    val startX = gestureRecognizerResult.landmarks().get(0).get(it!!.start()).x() * imageWidth * scaleFactor
+                    val startY = gestureRecognizerResult.landmarks().get(0).get(it.start()).y() * imageHeight * scaleFactor
+                    val endX = gestureRecognizerResult.landmarks().get(0).get(it.end()).x() * imageWidth * scaleFactor
+                    val endY = gestureRecognizerResult.landmarks().get(0).get(it.end()).y() * imageHeight * scaleFactor
+                    canvas.drawLine(startX, startY, endX, endY, linePaint)
                 }
             }
         }
     }
-
-    // comment
 
     fun setResults(
         gestureRecognizerResult: GestureRecognizerResult,
@@ -99,21 +105,20 @@ class OverlayView(context: Context?, attrs: AttributeSet?) :
         this.imageWidth = imageWidth
 
         scaleFactor = when (runningMode) {
-            RunningMode.IMAGE,
-            RunningMode.VIDEO -> {
-                min(width * 1f / imageWidth, height * 1f / imageHeight)
-            }
-            RunningMode.LIVE_STREAM -> {
-                // PreviewView is in FILL_START mode. So we need to scale up the
-                // landmarks to match with the size that the captured images will be
-                // displayed.
-                max(width * 1f / imageWidth, height * 1f / imageHeight)
-            }
+            RunningMode.IMAGE, RunningMode.VIDEO -> min(width * 1f / imageWidth, height * 1f / imageHeight)
+            RunningMode.LIVE_STREAM -> max(width * 1f / imageWidth, height * 1f / imageHeight)
         }
         invalidate()
     }
 
+    fun setNextColor(red: Any) {
+
+    }
+
     companion object {
-        private const val LANDMARK_STROKE_WIDTH = 8F
+        private const val LANDMARK_STROKE_WIDTH = 6F
+        private const val LANDMARK_POINT_WIDTH = 6F
+        private const val LANDMARK_POINT_RADIUS = 6F
+        private const val LARGE_LANDMARK_POINT_RADIUS = 10F
     }
 }
