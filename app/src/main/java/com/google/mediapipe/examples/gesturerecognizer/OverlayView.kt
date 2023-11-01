@@ -22,7 +22,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     private var imageWidth: Int = 1
     private var imageHeight: Int = 1
 
-    private var thumb_Up = false
+    private var thumbUp = false
 
     init {
         initPaints()
@@ -30,7 +30,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
 
     fun setThumbUp(value: Boolean) {
-        thumb_Up = value
+        thumbUp = value
     }
 
     fun setNextColor(color: Int) {
@@ -78,7 +78,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
                     canvas.drawCircle(x, y, radius, pointPaint)
                 }
                 // draw-Methode (drawRect o.ä.) mit if Bedingung, canvas.draw...
-                if(thumb_Up) {
+                if(thumbUp) {
                     canvas.drawRect(200.0f, 200.0f, 2000.0f, 2000.0f, pointPaint)
                 }
 

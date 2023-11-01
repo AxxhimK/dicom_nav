@@ -55,6 +55,10 @@ class CameraFragment : Fragment(),
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
     private var cameraFacing = CameraSelector.LENS_FACING_FRONT
+
+    /** Blocking ML operations are performed using this executor */
+    private lateinit var backgroundExecutor: ExecutorService
+
     private val imageResourceIds = arrayOf(
         R.drawable.black,
         R.drawable.blue,
@@ -77,12 +81,13 @@ class CameraFragment : Fragment(),
         loadImageFromResource(imageViewDisplay)
     }
     fun previousImage() {
-        currentImageIndex = if (currentImageIndex - 1 < 0) imageResourceIds.size - 1 else currentImageIndex - 1
+        currentImageIndex = if (currentImageIndex - 1 < 0) {
+            imageResourceIds.size - 1
+        } else
+            currentImageIndex - 1
         loadImageFromResource(imageViewDisplay)
     }
 
-    /** Blocking ML operations are performed using this executor */
-    private lateinit var backgroundExecutor: ExecutorService
 
     override fun onResume() {
         super.onResume()
@@ -175,9 +180,10 @@ class CameraFragment : Fragment(),
         imageViewDisplay = fragmentCameraBinding.imageView
         loadImageFromResource(imageViewDisplay)
         fragmentCameraBinding.buttonNext.setOnClickListener { nextImage() }
-        fragmentCameraBinding.buttonNext.setOnClickListener { previousImage() }
+        fragmentCameraBinding.buttonPrevious.setOnClickListener { previousImage() }
 
     }
+
 
     private fun initBottomSheetControls() {
         // init bottom sheet settings
@@ -255,7 +261,7 @@ class CameraFragment : Fragment(),
                     try {
                         gestureRecognizerHelper.currentDelegate = p2
                         updateControlsUi()
-                    } catch(e: UninitializedPropertyAccessException) {
+                    } catch (e: UninitializedPropertyAccessException) {
                         Log.e(TAG, "GestureRecognizerHelper has not been initialized yet.")
 
                     }
@@ -387,32 +393,25 @@ class CameraFragment : Fragment(),
                     gestureRecognizerResultAdapter.updateResults(
                         gestureCategories.first()
                     )
-                    if(gestureCategories.first().isNotEmpty()) {
+                    if (gestureCategories.first().isNotEmpty()) {
 
                         val sortedCategories =
                             gestureCategories.first().sortedByDescending { it.score() }
                         if (sortedCategories.isNotEmpty()) {
                             val category = sortedCategories.first().categoryName()
                             when (category) {
-                                "Thumb_Up" -> fragmentCameraBinding.buttonNext.setOnClickListener {
-                                    nextImage()
-                                }
-                                //"Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
-                                //"Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
-
-                            }/*
-                            if(category.equals("Thumb_Up")) {
-                                fragmentCameraBinding.overlay.setNextColor(Color.RED);
-                            } else if(category.equals("Thumb_Down")) {
-                                fragmentCameraBinding.overlay.setNextColor(Color.MAGENTA);
-                            } else {
-                                fragmentCameraBinding.overlay.setNextColor(Color.YELLOW);
-                            }*/
+                                "Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
+                                "Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
+                            }
+                            //"Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
+                            //"Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
                         }
                     }
-                        } else {
-                            gestureRecognizerResultAdapter.updateResults(emptyList())
-                        }
+                }
+            } else {
+                gestureRecognizerResultAdapter.updateResults(emptyList())
+            }
+        }
 
                 fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
                     String.format("%d ms", resultBundle.inferenceTime)
@@ -428,8 +427,6 @@ class CameraFragment : Fragment(),
                 // Force a redraw
                 fragmentCameraBinding.overlay.invalidate()
             }
-        }
-    }
 
     override fun onError(error: String, errorCode: Int) {
         activity?.runOnUiThread {
