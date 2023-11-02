@@ -29,6 +29,7 @@ import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import kotlin.system.measureTimeMillis
 
 class CameraFragment : Fragment(),
     GestureRecognizerHelper.GestureRecognizerListener {
@@ -59,6 +60,11 @@ class CameraFragment : Fragment(),
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ExecutorService
 
+    private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
+    private lateinit var imageViewDisplay: ImageView
+
+    private var imageChangeTime: Long = 0
+
     private val imageResourceIds = arrayOf(
         R.drawable.black,
         R.drawable.blue,
@@ -68,9 +74,6 @@ class CameraFragment : Fragment(),
         R.drawable.yellow,
         R.drawable.turq
     )
-    private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
-    private lateinit var imageViewDisplay: ImageView
-
 
     // Bilder von Resources laden
     fun loadImageFromResource(imageView: ImageView) {
@@ -87,6 +90,8 @@ class CameraFragment : Fragment(),
             currentImageIndex - 1
         loadImageFromResource(imageViewDisplay)
     }
+
+
 
 
     override fun onResume() {
@@ -399,34 +404,44 @@ class CameraFragment : Fragment(),
                             gestureCategories.first().sortedByDescending { it.score() }
                         if (sortedCategories.isNotEmpty()) {
                             val category = sortedCategories.first().categoryName()
-                            when (category) {
-                                "Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
-                                "Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
+                            if (category == "Thumb_Up") {
+                                val currentTime = System.currentTimeMillis()
+                                if (currentTime - imageChangeTime >= 1000) { //1000ms = 1s
+                                    nextImage()
+                                    imageChangeTime = currentTime
+                                }
+                            }
+                            else if (category == "Thumb_Down") {
+                                val currentTime = System.currentTimeMillis()
+                                if (currentTime - imageChangeTime >= 1000) {
+                                    previousImage()
+                                    imageChangeTime = currentTime
+                                }
                             }
                             //"Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
                             //"Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
                         }
                     }
+                } else {
+                    gestureRecognizerResultAdapter.updateResults(emptyList())
                 }
-            } else {
-                gestureRecognizerResultAdapter.updateResults(emptyList())
             }
+
+            fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
+                String.format("%d ms", resultBundle.inferenceTime)
+
+            // Pass necessary information to OverlayView for drawing on the canvas
+            fragmentCameraBinding.overlay.setResults(
+                resultBundle.results.first(),
+                resultBundle.inputImageHeight,
+                resultBundle.inputImageWidth,
+                RunningMode.LIVE_STREAM
+            )
+
+            // Force a redraw
+            fragmentCameraBinding.overlay.invalidate()
         }
-
-                fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
-                    String.format("%d ms", resultBundle.inferenceTime)
-
-                // Pass necessary information to OverlayView for drawing on the canvas
-                fragmentCameraBinding.overlay.setResults(
-                    resultBundle.results.first(),
-                    resultBundle.inputImageHeight,
-                    resultBundle.inputImageWidth,
-                    RunningMode.LIVE_STREAM
-                )
-
-                // Force a redraw
-                fragmentCameraBinding.overlay.invalidate()
-            }
+    }
 
     override fun onError(error: String, errorCode: Int) {
         activity?.runOnUiThread {

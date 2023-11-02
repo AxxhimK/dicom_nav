@@ -6,6 +6,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
 import com.google.mediapipe.tasks.vision.core.RunningMode
 import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
 import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
@@ -23,6 +24,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     private var imageHeight: Int = 1
 
     private var thumbUp = false
+    private var isNextImageCalled = false
 
     init {
         initPaints()
@@ -31,6 +33,9 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
     fun setThumbUp(value: Boolean) {
         thumbUp = value
+        if (thumbUp) {
+            isNextImageCalled = false
+        }
     }
 
     fun setNextColor(color: Int) {
@@ -79,7 +84,8 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
                 }
                 // draw-Methode (drawRect o.ä.) mit if Bedingung, canvas.draw...
                 if(thumbUp) {
-                    canvas.drawRect(200.0f, 200.0f, 2000.0f, 2000.0f, pointPaint)
+                    //canvas.drawRect(200.0f, 200.0f, 2000.0f, 2000.0f, pointPaint)
+                    isNextImageCalled = true
                 }
 
                 HandLandmarker.HAND_CONNECTIONS.forEach {
@@ -120,5 +126,9 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         private const val LANDMARK_POINT_WIDTH = 6F
         private const val LANDMARK_POINT_RADIUS = 6F
         private const val LARGE_LANDMARK_POINT_RADIUS = 10F
+    }
+
+    interface OverlayViewListener{
+        fun nextImage()
     }
 }
