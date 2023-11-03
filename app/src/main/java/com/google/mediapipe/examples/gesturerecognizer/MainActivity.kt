@@ -10,6 +10,7 @@ import com.google.mediapipe.examples.gesturerecognizer.databinding.ActivityMainB
 import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
+import android.os.Environment
 import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
 import com.google.mediapipe.tasks.components.containers.Category
 import com.pixelmed.dicom.AttributeList
@@ -21,6 +22,7 @@ import java.nio.IntBuffer
 class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
+
     //private lateinit var imageHandler: ImageHandler
 
     override fun onCreate(savedInstanceState: Bundle?) {

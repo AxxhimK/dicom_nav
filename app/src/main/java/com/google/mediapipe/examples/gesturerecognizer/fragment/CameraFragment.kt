@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.Toast
+import android.net.Uri
+import android.os.Environment
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
@@ -29,6 +31,7 @@ import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
+import java.io.File
 import kotlin.system.measureTimeMillis
 
 class CameraFragment : Fragment(),
@@ -63,18 +66,100 @@ class CameraFragment : Fragment(),
     private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
     private lateinit var imageViewDisplay: ImageView
 
-    private var imageChangeTime: Long = 0
+    private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
 
     private val imageResourceIds = arrayOf(
-        R.drawable.black,
+        /*R.drawable.black,
         R.drawable.blue,
         R.drawable.green,
         R.drawable.red,
         R.drawable.purple,
         R.drawable.yellow,
-        R.drawable.turq
+        R.drawable.turq,*/
+        R.drawable.image_000001,
+        R.drawable.image_000002,
+        R.drawable.image_000003,
+        R.drawable.image_000004,
+        R.drawable.image_000005,
+        R.drawable.image_000006,
+        R.drawable.image_000007,
+        R.drawable.image_000008,
+        R.drawable.image_000009,
+        R.drawable.image_000010,
+        R.drawable.image_000011,
+        R.drawable.image_000012,
+        R.drawable.image_000013,
+        R.drawable.image_000014,
+        R.drawable.image_000015,
+        R.drawable.image_000016,
+        R.drawable.image_000017,
+        R.drawable.image_000018,
+        R.drawable.image_000019,
+        R.drawable.image_000020,
+        R.drawable.image_000021,
+        R.drawable.image_000022,
+        R.drawable.image_000023,
+        R.drawable.image_000024,
+        R.drawable.image_000025,
+        R.drawable.image_000026,
+        R.drawable.image_000027,
+        R.drawable.image_000028,
+        R.drawable.image_000029,
+        R.drawable.image_000030,
+        R.drawable.image_000031,
+        R.drawable.image_000032,
+        R.drawable.image_000033,
+        R.drawable.image_000034,
+        R.drawable.image_000035,
+        R.drawable.image_000036,
+        R.drawable.image_000037,
+        R.drawable.image_000038,
+        R.drawable.image_000039,
+        R.drawable.image_000040,
+        R.drawable.image_000041,
+        R.drawable.image_000042,
+        R.drawable.image_000043,
+        R.drawable.image_000044,
+        R.drawable.image_000045,
+        R.drawable.image_000046,
+        R.drawable.image_000047,
+        R.drawable.image_000048,
+        R.drawable.image_000049,
+        R.drawable.image_000050,
     )
 
+
+/*
+    fun loadImagesFromExternalStorage() {
+        val imagesList = mutableListOf<Uri>()
+        val imagesDir = requireContext().getExternalFilesDir(null)
+        val jpgFiles = imagesDir?.listFiles { _, name ->
+            name.endsWith((".jpg"))
+        }
+
+        jpgFiles?.forEach { file ->
+            val imageUri = Uri.fromFile(file)
+            imagesList.add(imageUri)
+        }
+    }
+
+    fun loadImagesFromDocumentsDir(): List<File> {
+        val imagesList = mutableListOf<File>()
+
+        if (Environment.MEDIA_MOUNTED == Environment.getExternalStorageState() || Environment.MEDIA_MOUNTED_READ_ONLY == Environment.getExternalStorageState())
+        val documentsDir =
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS)
+        if (documentsDir.exists()) {
+            val jpgFiles =
+                documentsDir.listFiles { _, name -> name.endsWith(".jpg", ignoreCase = true) }
+        }
+        jpgFiles?.let { files ->
+            imagesList.addAll(files)
+        }
+        return imagesList
+    }
+
+*/
     // Bilder von Resources laden
     fun loadImageFromResource(imageView: ImageView) {
         imageView.setImageResource(imageResourceIds[currentImageIndex])
@@ -404,7 +489,21 @@ class CameraFragment : Fragment(),
                             gestureCategories.first().sortedByDescending { it.score() }
                         if (sortedCategories.isNotEmpty()) {
                             val category = sortedCategories.first().categoryName()
-                            if (category == "Thumb_Up") {
+                            val currentTime = System.currentTimeMillis()
+                            if (currentTime - lastImageChangeTime >= 100) {
+                                when (category) {
+                                    "Thumb_Up" -> {
+                                        nextImage()
+                                        lastImageChangeTime = currentTime // Stoppuhr wieder auf 0 setzen.
+                                    }
+                                    "Thumb_Down" -> {
+                                        previousImage()
+                                        lastImageChangeTime = currentTime
+                                    }
+                                }
+                            }
+                        }
+                            /*if (category == "Thumb_Up") {
                                 val currentTime = System.currentTimeMillis()
                                 if (currentTime - imageChangeTime >= 1000) { //1000ms = 1s
                                     nextImage()
@@ -417,10 +516,9 @@ class CameraFragment : Fragment(),
                                     previousImage()
                                     imageChangeTime = currentTime
                                 }
-                            }
+                            }*/
                             //"Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
                             //"Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
-                        }
                     }
                 } else {
                     gestureRecognizerResultAdapter.updateResults(emptyList())
