@@ -7,11 +7,15 @@ import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
 import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
+import com.google.mediapipe.formats.proto.LandmarkProto.NormalizedLandmark
 import com.google.mediapipe.tasks.vision.core.RunningMode
 import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
 import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
 import kotlin.math.max
 import kotlin.math.min
+import kotlin.math.sqrt
+import android.util.Log
+import kotlin.math.pow
 
 class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
@@ -43,6 +47,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         pointPaint.color = color
         invalidate()
     }
+
     fun clear() {
         results = null
         linePaint.reset()
@@ -75,6 +80,9 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
                     if (i == 4) {
                         pointPaint.color = ContextCompat.getColor(context!!, R.color.htwOrange)
                         radius = LARGE_LANDMARK_POINT_RADIUS
+                    } else if (i == 8) {
+                        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwBlue)
+                        radius = LARGE_LANDMARK_POINT_RADIUS
                     } else {
                         // Set the color for all other landmarks as green
                         pointPaint.color = ContextCompat.getColor(context!!, R.color.htwGreen)
@@ -83,52 +91,90 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
                     canvas.drawCircle(x, y, radius, pointPaint)
                 }
                 // draw-Methode (drawRect o.ä.) mit if Bedingung, canvas.draw...
-                if(thumbUp) {
+                if (thumbUp) {
                     //canvas.drawRect(200.0f, 200.0f, 2000.0f, 2000.0f, pointPaint)
                     isNextImageCalled = true
                 }
 
                 HandLandmarker.HAND_CONNECTIONS.forEach {
-                    val startX = gestureRecognizerResult.landmarks().get(0).get(it!!.start()).x() * imageWidth * scaleFactor
-                    val startY = gestureRecognizerResult.landmarks().get(0).get(it.start()).y() * imageHeight * scaleFactor
-                    val endX = gestureRecognizerResult.landmarks().get(0).get(it.end()).x() * imageWidth * scaleFactor
-                    val endY = gestureRecognizerResult.landmarks().get(0).get(it.end()).y() * imageHeight * scaleFactor
+                    val startX = gestureRecognizerResult.landmarks().get(0).get(it!!.start())
+                        .x() * imageWidth * scaleFactor
+                    val startY = gestureRecognizerResult.landmarks().get(0).get(it.start())
+                        .y() * imageHeight * scaleFactor
+                    val endX = gestureRecognizerResult.landmarks().get(0).get(it.end())
+                        .x() * imageWidth * scaleFactor
+                    val endY = gestureRecognizerResult.landmarks().get(0).get(it.end())
+                        .y() * imageHeight * scaleFactor
                     canvas.drawLine(startX, startY, endX, endY, linePaint)
                 }
             }
         }
     }
+    /*
+    private fun calculateDistance(landmark1: NormalizedLandmark, landmark2: NormalizedLandmark): Float {
+        val x1 = landmark1.x * imageWidth * scaleFactor
+        val y1 = landmark1.y * imageHeight * scaleFactor
+        val x2 = landmark2.x * imageWidth * scaleFactor
+        val y2 = landmark2.y * imageHeight * scaleFactor
 
-    fun setResults(
-        gestureRecognizerResult: GestureRecognizerResult,
-        imageHeight: Int,
-        imageWidth: Int,
-        runningMode: RunningMode = RunningMode.IMAGE
-    ) {
-        results = gestureRecognizerResult
+        return sqrt((x1 - y1).pow(2) + (x2 - y2).pow(2)) //berechne euklidischer Abstand
+    }*/
 
-        this.imageHeight = imageHeight
-        this.imageWidth = imageWidth
+    private fun calculateDistance(): Float {
+        results?.let { gestureRecognizerResult ->
+            for (landmark in gestureRecognizerResult.landmarks()) {
+                for (i in 0 until landmark.size) {
+                    val landmark4 = landmark[4]
+                    val landmark8 = landmark[8]
+                    val x1 = landmark4.x() * imageWidth * scaleFactor
+                    val y1 = landmark4.y() * imageHeight * scaleFactor
+                    val x2 = landmark8.x() * imageWidth * scaleFactor
+                    val y2 = landmark8.y() * imageHeight * scaleFactor
 
-        scaleFactor = when (runningMode) {
-            RunningMode.IMAGE, RunningMode.VIDEO -> min(width * 1f / imageWidth, height * 1f / imageHeight)
-            RunningMode.LIVE_STREAM -> max(width * 1f / imageWidth, height * 1f / imageHeight)
+                    return sqrt((x1 - x2).pow(2) + (x2 - y2).pow(2)) //berechne euklidischen Abstand von Daumenspitze zu Indexfingerspitze (geradliniger Abstand zw. zwei Punkten)
+                }
+            }
         }
-        invalidate()
+        return 0f //Wenn results null ist --> return 0f
     }
 
-    fun setNextColor(red: Any) {
+        fun setResults(
+            gestureRecognizerResult: GestureRecognizerResult,
+            imageHeight: Int,
+            imageWidth: Int,
+            runningMode: RunningMode = RunningMode.IMAGE
+        ) {
+            results = gestureRecognizerResult
 
-    }
+            this.imageHeight = imageHeight
+            this.imageWidth = imageWidth
 
-    companion object {
-        private const val LANDMARK_STROKE_WIDTH = 6F
-        private const val LANDMARK_POINT_WIDTH = 6F
-        private const val LANDMARK_POINT_RADIUS = 6F
-        private const val LARGE_LANDMARK_POINT_RADIUS = 10F
-    }
+            scaleFactor = when (runningMode) {
+                RunningMode.IMAGE, RunningMode.VIDEO -> min(
+                    width * 1f / imageWidth,
+                    height * 1f / imageHeight
+                )
 
-    interface OverlayViewListener{
-        fun nextImage()
-    }
-}
+                RunningMode.LIVE_STREAM -> max(
+                    width * 1f / imageWidth,
+                    height * 1f / imageHeight
+                )
+            }
+            invalidate()
+
+            // Berechnung von Distanz Daumen- zu Indexfingerspitze
+            val distance = calculateDistance()
+            Log.d("Distanz", "Distanz: $distance")
+        }
+
+            companion object {
+                private const val LANDMARK_STROKE_WIDTH = 6F;
+                private const val LANDMARK_POINT_WIDTH = 6F;
+                private const val LANDMARK_POINT_RADIUS = 6F;
+                private const val LARGE_LANDMARK_POINT_RADIUS = 10F;
+            }
+
+            interface OverlayViewListener {
+                fun nextImage()
+            }
+        }

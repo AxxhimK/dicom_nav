@@ -1,6 +1,7 @@
 package com.google.mediapipe.examples.gesturerecognizer
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
