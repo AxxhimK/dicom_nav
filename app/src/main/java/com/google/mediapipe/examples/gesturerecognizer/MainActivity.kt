@@ -12,6 +12,7 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.Color
 import android.os.Environment
+import android.view.View
 import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
 import com.google.mediapipe.tasks.components.containers.Category
 import com.pixelmed.dicom.AttributeList
@@ -24,43 +25,22 @@ class MainActivity : AppCompatActivity() {
     private lateinit var activityMainBinding: ActivityMainBinding
     private val viewModel: MainViewModel by viewModels()
 
-    //private lateinit var imageHandler: ImageHandler
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+        // Hide the navigation toolbar
+        activityMainBinding.navigation.visibility = View.GONE
+
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
         activityMainBinding.navigation.setupWithNavController(navController)
         activityMainBinding.navigation.setOnNavigationItemReselectedListener {
             // ignore the reselection
         }
-        /*
-        val imageView = findViewById<ImageView>(R.id.imageView)
-        imageHandler.nextImage(imageView) // Load initial image
-
-        activityMainBinding.buttonNext.setOnClickListener {
-            imageHandler.nextImage(imageView)
-        }
-        activityMainBinding.buttonPrevious.setOnClickListener {
-            imageHandler.previousImage(imageView)
-        }
-        //activityMainBinding.imageView
-
-    */
     }
     override fun onBackPressed() {
         finish()
     }
-/*
-    override fun nextImage() {
-        imageHandler.nextImage(activityMainBinding.imageView)
-    }
-    override fun previousImage() {
-    }
-    */
-
 }

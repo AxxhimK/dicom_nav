@@ -1,284 +1,245 @@
 package com.google.mediapipe.examples.gesturerecognizer.fragment
 
-import android.annotation.SuppressLint
-import android.content.res.Configuration
-import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ImageView
-import android.widget.Toast
-import androidx.camera.core.*
-import androidx.camera.lifecycle.ProcessCameraProvider
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.activityViewModels
-import androidx.navigation.Navigation
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
-import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
-import com.google.mediapipe.examples.gesturerecognizer.R
-import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
-import com.google.mediapipe.tasks.vision.core.RunningMode
-import java.util.*
-import java.util.concurrent.ExecutorService
-import java.util.concurrent.Executors
-import java.util.concurrent.TimeUnit
+    import android.annotation.SuppressLint
+    import android.content.res.Configuration
+    import android.graphics.Bitmap
+    import android.graphics.BitmapFactory
+    import android.graphics.drawable.BitmapDrawable
+    import android.os.Bundle
+    import android.util.Log
+    import android.view.LayoutInflater
+    import android.view.View
+    import android.view.ViewGroup
+    import android.widget.AdapterView
+    import android.widget.ImageView
+    import android.widget.Toast
+    import androidx.camera.core.*
+    import androidx.camera.lifecycle.ProcessCameraProvider
+    import androidx.core.content.ContextCompat
+    import androidx.fragment.app.Fragment
+    import androidx.fragment.app.activityViewModels
+    import androidx.navigation.Navigation
+    import androidx.recyclerview.widget.LinearLayoutManager
+    import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
+    import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
+    import com.google.mediapipe.examples.gesturerecognizer.R
+    import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
+    import com.google.mediapipe.tasks.vision.core.RunningMode
+    import java.util.*
+    import java.util.concurrent.ExecutorService
+    import java.util.concurrent.Executors
+    import java.util.concurrent.TimeUnit
 
-class CameraFragment : Fragment(),
-    GestureRecognizerHelper.GestureRecognizerListener {
+    class CameraFragment : Fragment(),
+        GestureRecognizerHelper.GestureRecognizerListener {
 
-    companion object {
-        private const val TAG = "Hand gesture recognizer"
-    }
-
-    private var _fragmentCameraBinding: FragmentCameraBinding? = null
-
-    private val fragmentCameraBinding
-        get() = _fragmentCameraBinding!!
-
-    private lateinit var gestureRecognizerHelper: GestureRecognizerHelper
-    private val viewModel: MainViewModel by activityViewModels()
-    private var defaultNumResults = 1
-    private val gestureRecognizerResultAdapter: GestureRecognizerResultsAdapter by lazy {
-        GestureRecognizerResultsAdapter().apply {
-            updateAdapterSize(defaultNumResults)
-        }
-    }
-    private var preview: Preview? = null
-    private var imageAnalyzer: ImageAnalysis? = null
-    private var camera: Camera? = null
-    private var cameraProvider: ProcessCameraProvider? = null
-    private var cameraFacing = CameraSelector.LENS_FACING_FRONT
-
-    /** Blocking ML operations are performed using this executor */
-    private lateinit var backgroundExecutor: ExecutorService
-
-    private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
-    private lateinit var imageViewDisplay: ImageView
-
-    private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
-
-    /* private val imageResourceIds = arrayOf(
-         R.drawable.image_000001,
-         R.drawable.image_000002,
-         R.drawable.image_000003,
-         R.drawable.image_000004,
-         R.drawable.image_000005,
-         R.drawable.image_000006,
-         R.drawable.image_000007,
-         R.drawable.image_000008,
-         R.drawable.image_000009,
-         R.drawable.image_000010,
-         R.drawable.image_000011,
-         R.drawable.image_000012,
-         R.drawable.image_000013,
-         R.drawable.image_000014,
-         R.drawable.image_000015,
-         R.drawable.image_000016,
-         R.drawable.image_000017,
-         R.drawable.image_000018,
-         R.drawable.image_000019,
-         R.drawable.image_000020,
-         R.drawable.image_000021,
-         R.drawable.image_000022,
-         R.drawable.image_000023,
-         R.drawable.image_000024,
-         R.drawable.image_000025,
-         R.drawable.image_000026,
-         R.drawable.image_000027,
-         R.drawable.image_000028,
-         R.drawable.image_000029,
-         R.drawable.image_000030,
-         R.drawable.image_000031,
-         R.drawable.image_000032,
-         R.drawable.image_000033,
-         R.drawable.image_000034,
-         R.drawable.image_000035,
-         R.drawable.image_000036,
-         R.drawable.image_000037,
-         R.drawable.image_000038,
-         R.drawable.image_000039,
-         R.drawable.image_000040,
-         R.drawable.image_000041,
-         R.drawable.image_000042,
-         R.drawable.image_000043,
-         R.drawable.image_000044,
-         R.drawable.image_000045,
-         R.drawable.image_000046,
-         R.drawable.image_000047,
-         R.drawable.image_000048,
-         R.drawable.image_000049,
-         R.drawable.image_000050,
-     )
- */
-
-/*
-    fun loadImagesFromExternalStorage() {
-        val imagesList = mutableListOf<Uri>()
-        val imagesDir = requireContext().getExternalFilesDir(null)
-        val jpgFiles = imagesDir?.listFiles { _, name ->
-            name.endsWith((".jpg"))
+        companion object {
+            private const val TAG = "Hand gesture recognizer"
         }
 
-        jpgFiles?.forEach { file ->
-            val imageUri = Uri.fromFile(file)
-            imagesList.add(imageUri)
-        }
-    }
+        private var _fragmentCameraBinding: FragmentCameraBinding? = null
 
+        private val fragmentCameraBinding
+            get() = _fragmentCameraBinding!!
 
-    // Bilder von Resources laden
-    fun loadImageFromResource(imageView: ImageView) {
-        imageView.setImageResource(imageResourceIds[currentImageIndex])
-    }
-
-    fun nextImage() {
-       currentImageIndex = (currentImageIndex + 1) % buildImageResourceIds.size //nächstes Bild (Berechnung hinzufügen)
-        loadImageFromResource(imageViewDisplay)
-    }
-    fun previousImage() {
-        currentImageIndex = if (currentImageIndex - 1 < 0) {
-            imageResourceIds.size - 1
-        } else
-            currentImageIndex - 1
-        loadImageFromResource(imageViewDisplay)
-    }
-    */
-
-    private var imageResources: List<Int> = buildImageList()
-
-    private fun buildImageList(): List<Int> { //erzeuge dynamische Liste von allen Bildern in /raw ohne spezifische Auflistung zu erzeugen
-        val fields = R.raw::class.java.fields //Felder aus Java Klasse
-        val imageList = mutableListOf<Int>() //leere, veränderbare Liste für IDs der Bilder
-
-        for (field in fields) {
-            val id = field.getInt(null) //getter Methode für Id des Resource-Feldes --> null weil Java Konventionen
-            imageList.add(id) //Füge Id zur Liste hinzu
-        }
-        return imageList
-        }
-
-    private fun loadImageFromResource(imageView: ImageView) {
-        imageView.setImageResource(imageResources[currentImageIndex])
-    }
-
-    private fun nextImage() {
-        currentImageIndex = (currentImageIndex + 1) % imageResources.size //nächstes Bild mit Modulo Operator
-        loadImageFromResource(imageViewDisplay)
-    }
-
-    private fun previousImage() {
-        currentImageIndex = if (currentImageIndex - 1 < 0) {
-            imageResources.size - 1
-        } else {
-            currentImageIndex - 1
-        }
-        loadImageFromResource(imageViewDisplay)
-    }
-
-
-
-
-    override fun onResume() {
-        super.onResume()
-        // Make sure that all permissions are still present, since the
-        // user could have removed them while the app was in paused state.
-        if (!PermissionsFragment.hasPermissions(requireContext())) {
-            Navigation.findNavController(
-                requireActivity(), R.id.fragment_container
-            ).navigate(R.id.action_camera_to_permissions)
-        }
-
-        // Start the GestureRecognizerHelper again when users come back
-        // to the foreground.
-        backgroundExecutor.execute {
-            if (gestureRecognizerHelper.isClosed()) {
-                gestureRecognizerHelper.setupGestureRecognizer()
+        private lateinit var gestureRecognizerHelper: GestureRecognizerHelper
+        private val viewModel: MainViewModel by activityViewModels()
+        private var defaultNumResults = 1
+        private val gestureRecognizerResultAdapter: GestureRecognizerResultsAdapter by lazy {
+            GestureRecognizerResultsAdapter().apply {
+                updateAdapterSize(defaultNumResults)
             }
         }
-    }
+        private var preview: Preview? = null
+        private var imageAnalyzer: ImageAnalysis? = null
+        private var camera: Camera? = null
+        private var cameraProvider: ProcessCameraProvider? = null
+        private var cameraFacing = CameraSelector.LENS_FACING_FRONT
 
-    override fun onPause() {
-        super.onPause()
-        if (this::gestureRecognizerHelper.isInitialized) {
-            viewModel.setMinHandDetectionConfidence(gestureRecognizerHelper.minHandDetectionConfidence)
-            viewModel.setMinHandTrackingConfidence(gestureRecognizerHelper.minHandTrackingConfidence)
-            viewModel.setMinHandPresenceConfidence(gestureRecognizerHelper.minHandPresenceConfidence)
-            viewModel.setDelegate(gestureRecognizerHelper.currentDelegate)
+        /** Blocking ML operations are performed using this executor */
+        private lateinit var backgroundExecutor: ExecutorService
 
-            // Close the Gesture Recognizer helper and release resources
-            backgroundExecutor.execute { gestureRecognizerHelper.clearGestureRecognizer() }
+        private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
+        private lateinit var imageViewDisplay: ImageView
+
+        private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
+
+        /* private val imageResourceIds = arrayOf(
+             R.drawable.image_000001
+             )
+         */
+
+        //private var imageResources: List<Int> = buildImageList()
+        private var imageBitmaps: List<Bitmap> = listOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
+
+        private fun displayZoomedBitmap() {
+            if (currentImageIndex in imageBitmaps.indices) {
+                val originalBitmap = imageBitmaps[currentImageIndex]
+
+                // Originale Bitmap Eigenschaften
+                Log.d("BitmapInfo", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
+
+                val zoomedBitmap = createZoomedBitmap(originalBitmap)
+                imageViewDisplay.setImageBitmap(zoomedBitmap)
+            }
         }
-    }
+        private fun createZoomedBitmap(originalBitmap: Bitmap): Bitmap {
+            val x = originalBitmap.width / 4
+            val y = originalBitmap.height / 4
+            val width = originalBitmap.width / 2
+            val height = originalBitmap.height / 2
 
-    override fun onDestroyView() {
-        _fragmentCameraBinding = null
-        super.onDestroyView()
+            Log.d("ZoomBitmap", "Zoomed Bitmap - x: $x, y: $y, width: $width, height: $height")
+            return Bitmap.createBitmap(originalBitmap, x, y, width, height)
 
-        // Shut down our background executor
-        backgroundExecutor.shutdown()
-        backgroundExecutor.awaitTermination(
-            Long.MAX_VALUE, TimeUnit.NANOSECONDS
-        )
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        _fragmentCameraBinding =
-            FragmentCameraBinding.inflate(inflater, container, false)
-
-        return fragmentCameraBinding.root
-    }
-
-    @SuppressLint("MissingPermission")
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        with(fragmentCameraBinding.recyclerviewResults) {
-            layoutManager = LinearLayoutManager(requireContext())
-            adapter = gestureRecognizerResultAdapter
-        }
-
-        // Initialize our background executor
-        backgroundExecutor = Executors.newSingleThreadExecutor()
-
-        // Wait for the views to be properly laid out
-        fragmentCameraBinding.viewFinder.post {
-            // Set up the camera and its use cases
-            setUpCamera()
         }
 
-        // Create the Hand Gesture Recognition Helper that will handle the
-        // inference
-        backgroundExecutor.execute {
-            gestureRecognizerHelper = GestureRecognizerHelper(
-                context = requireContext(),
-                runningMode = RunningMode.LIVE_STREAM,
-                minHandDetectionConfidence = viewModel.currentMinHandDetectionConfidence,
-                minHandTrackingConfidence = viewModel.currentMinHandTrackingConfidence,
-                minHandPresenceConfidence = viewModel.currentMinHandPresenceConfidence,
-                currentDelegate = viewModel.currentDelegate,
-                gestureRecognizerListener = this
+        private fun loadBitmapFromResource(): List<Bitmap> {
+            val fields = R.raw::class.java.fields //Felder aus Java Klasse
+            return fields.mapNotNull { field ->
+                val id = field.getInt(null)
+                BitmapFactory.decodeResource(resources, id)// Umwandeln von Integer ID in Bitmap
+            }
+        }
+/*
+                private fun buildImageList(): List<Int> { //erzeuge dynamische Liste von allen Bildern in /raw ohne spezifische Auflistung zu erzeugen
+                    val fields = R.raw::class.java.fields //Felder aus Java Klasse
+                    val imageList = mutableListOf<Int>() //leere, veränderbare Liste für IDs der Bilder
+
+                    for (field in fields) {
+                        val id = field.getInt(null) //getter Methode für Id des Resource-Feldes --> null weil Java Konventionen
+                        imageList.add(id) //Füge Id zur Liste hinzu
+                    }
+                    return imageList
+                }*/
+        /*
+                        private fun loadImageFromResource(imageView: ImageView) {
+                            val bitmap = BitmapFactory.decodeResource(resources, imageResources[currentImageIndex])
+                            imageView.setImageBitmap(bitmap)
+                            //imageViewDisplay.setImageResource(imageResources[currentImageIndex])
+                        }*/
+
+        private fun loadImageFromResource(imageView: ImageView) {
+            if (currentImageIndex in imageBitmaps.indices) {
+                imageView.setImageBitmap(imageBitmaps[currentImageIndex])
+            }
+        }
+
+        private fun nextImage() {
+            if (currentImageIndex < imageBitmaps.size - 1) {
+                currentImageIndex++
+                loadImageFromResource(imageViewDisplay)
+            }
+        }
+
+        private fun previousImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--
+                loadImageFromResource(imageViewDisplay)
+            }
+        }
+
+        override fun onResume() {
+            super.onResume()
+            // Make sure that all permissions are still present, since the
+            // user could have removed them while the app was in paused state.
+            if (!PermissionsFragment.hasPermissions(requireContext())) {
+                Navigation.findNavController(
+                    requireActivity(), R.id.fragment_container
+                ).navigate(R.id.action_camera_to_permissions)
+            }
+
+            // Start the GestureRecognizerHelper again when users come back
+            // to the foreground.
+            backgroundExecutor.execute {
+                if (gestureRecognizerHelper.isClosed()) {
+                    gestureRecognizerHelper.setupGestureRecognizer()
+                }
+            }
+        }
+
+        override fun onPause() {
+            super.onPause()
+            if (this::gestureRecognizerHelper.isInitialized) {
+                viewModel.setMinHandDetectionConfidence(gestureRecognizerHelper.minHandDetectionConfidence)
+                viewModel.setMinHandTrackingConfidence(gestureRecognizerHelper.minHandTrackingConfidence)
+                viewModel.setMinHandPresenceConfidence(gestureRecognizerHelper.minHandPresenceConfidence)
+                viewModel.setDelegate(gestureRecognizerHelper.currentDelegate)
+
+                // Close the Gesture Recognizer helper and release resources
+                backgroundExecutor.execute { gestureRecognizerHelper.clearGestureRecognizer() }
+            }
+        }
+
+        override fun onDestroyView() {
+            _fragmentCameraBinding = null
+            super.onDestroyView()
+
+            // Shut down our background executor
+            backgroundExecutor.shutdown()
+            backgroundExecutor.awaitTermination(
+                Long.MAX_VALUE, TimeUnit.NANOSECONDS
             )
         }
 
-        // Attach listeners to UI control widgets
-        initBottomSheetControls()
+        override fun onCreateView(
+            inflater: LayoutInflater,
+            container: ViewGroup?,
+            savedInstanceState: Bundle?
+        ): View {
 
-        imageViewDisplay = fragmentCameraBinding.imageView
-        loadImageFromResource(imageViewDisplay)
-        fragmentCameraBinding.buttonNext.setOnClickListener { nextImage() }
-        fragmentCameraBinding.buttonPrevious.setOnClickListener { previousImage() }
+            _fragmentCameraBinding =
+                FragmentCameraBinding.inflate(inflater, container, false)
 
-    }
+            return fragmentCameraBinding.root
+        }
+
+        @SuppressLint("MissingPermission")
+        override fun onViewCreated(view: View, savedInstanceState: Bundle?) { //Alle Reaktionen beim Starten der App
+            super.onViewCreated(view, savedInstanceState)
+            with(fragmentCameraBinding.recyclerviewResults) {
+                layoutManager = LinearLayoutManager(requireContext())
+                adapter = gestureRecognizerResultAdapter
+            }
+
+            // Initialize our background executor
+            backgroundExecutor = Executors.newSingleThreadExecutor()
+
+            // Wait for the views to be properly laid out
+            fragmentCameraBinding.viewFinder.post {
+                // Set up the camera and its use cases
+                setUpCamera()
+            }
+
+            // Create the Hand Gesture Recognition Helper that will handle the
+            // inference
+            backgroundExecutor.execute {
+                gestureRecognizerHelper = GestureRecognizerHelper(
+                    context = requireContext(),
+                    runningMode = RunningMode.LIVE_STREAM,
+                    minHandDetectionConfidence = viewModel.currentMinHandDetectionConfidence,
+                    minHandTrackingConfidence = viewModel.currentMinHandTrackingConfidence,
+                    minHandPresenceConfidence = viewModel.currentMinHandPresenceConfidence,
+                    currentDelegate = viewModel.currentDelegate,
+                    gestureRecognizerListener = this
+                )
+            }
+
+            // Attach listeners to UI control widgets
+            initBottomSheetControls()
+
+            imageViewDisplay = fragmentCameraBinding.imageView
+            imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
+            displayZoomedBitmap()
+            loadImageFromResource(imageViewDisplay)
+            //loadImageFromResource(imageViewDisplay)
+            //fragmentCameraBinding.buttonNext.setOnClickListener { nextImage() }
+            //fragmentCameraBinding.buttonPrevious.setOnClickListener { previousImage() }
+
+        }
 
 
-    private fun initBottomSheetControls() {
+        private fun initBottomSheetControls() {
         // init bottom sheet settings
         fragmentCameraBinding.bottomSheetLayout.detectionThresholdValue.text =
             String.format(
@@ -471,11 +432,27 @@ class CameraFragment : Fragment(),
             fragmentCameraBinding.viewFinder.display.rotation
     }
 
+
+        //private var isZoomedIn = false //ZoomIn auf false setzen
+        //private val zoomFactor = 2.0f //Zoomstärke (evtl. anpassen)
+
+        /*
+        private fun zoomInBitmap() {
+            if (isZoomedIn) {
+                imageViewDisplay.scaleX = 1f
+                imageViewDisplay.scaleY = 1f
+                isZoomedIn = false
+            } else {
+                imageViewDisplay.scaleX = zoomFactor
+                imageViewDisplay.scaleY = zoomFactor
+                isZoomedIn = true
+            }
+        }*/
     // Update UI after a hand gesture has been recognized. Extracts original
     // image height/width to scale and place the landmarks properly through
     // OverlayView. Only one result is expected at a time. If two or more
     // hands are seen in the camera frame, only one will be processed.
-    override fun onResults(
+    override fun onResults( //Alle Reaktionen auf Gesten
         resultBundle: GestureRecognizerHelper.ResultBundle
     ) {
         activity?.runOnUiThread {
@@ -503,25 +480,12 @@ class CameraFragment : Fragment(),
                                         previousImage()
                                         lastImageChangeTime = currentTime
                                     }
+                                    //"Closed_Fist" -> {
+                                      //  zoomInBitmap()
+                                    //}
                                 }
                             }
                         }
-                            /*if (category == "Thumb_Up") {
-                                val currentTime = System.currentTimeMillis()
-                                if (currentTime - imageChangeTime >= 1000) { //1000ms = 1s
-                                    nextImage()
-                                    imageChangeTime = currentTime
-                                }
-                            }
-                            else if (category == "Thumb_Down") {
-                                val currentTime = System.currentTimeMillis()
-                                if (currentTime - imageChangeTime >= 1000) {
-                                    previousImage()
-                                    imageChangeTime = currentTime
-                                }
-                            }*/
-                            //"Thumb_Up" -> fragmentCameraBinding.overlay.setThumbUp(true)
-                            //"Open_Palm" -> fragmentCameraBinding.overlay.setThumbUp(false)
                     }
                 } else {
                     gestureRecognizerResultAdapter.updateResults(emptyList())
@@ -555,8 +519,5 @@ class CameraFragment : Fragment(),
                 )
             }
         }
-    }
-    interface ImageChangeAction {
-        //fun nextImage()
     }
 }

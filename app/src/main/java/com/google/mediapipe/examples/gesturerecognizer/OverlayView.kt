@@ -15,6 +15,7 @@ import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sqrt
 import android.util.Log
+import java.util.Locale.Category
 import kotlin.math.pow
 
 class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
@@ -110,20 +111,11 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
             }
         }
     }
-    /*
-    private fun calculateDistance(landmark1: NormalizedLandmark, landmark2: NormalizedLandmark): Float {
-        val x1 = landmark1.x * imageWidth * scaleFactor
-        val y1 = landmark1.y * imageHeight * scaleFactor
-        val x2 = landmark2.x * imageWidth * scaleFactor
-        val y2 = landmark2.y * imageHeight * scaleFactor
-
-        return sqrt((x1 - y1).pow(2) + (x2 - y2).pow(2)) //berechne euklidischer Abstand
-    }*/
 
     private fun calculateDistance(): Float {
         results?.let { gestureRecognizerResult ->
             for (landmark in gestureRecognizerResult.landmarks()) {
-                for (i in 0 until landmark.size) {
+                //for (i in 0 until landmark.size) {
                     val landmark4 = landmark[4]
                     val landmark8 = landmark[8]
                     val x1 = landmark4.x() * imageWidth * scaleFactor
@@ -131,11 +123,11 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
                     val x2 = landmark8.x() * imageWidth * scaleFactor
                     val y2 = landmark8.y() * imageHeight * scaleFactor
 
-                    return sqrt((x1 - x2).pow(2) + (x2 - y2).pow(2)) //berechne euklidischen Abstand von Daumenspitze zu Indexfingerspitze (geradliniger Abstand zw. zwei Punkten)
-                }
+                    return sqrt((x1 - x2).pow(2) + (y1 - y2).pow(2)) //berechne euklidischen Abstand von Daumenspitze zu Indexfingerspitze (geradliniger Abstand zw. zwei Punkten)
+           //     }
             }
         }
-        return 0f //Wenn results null ist --> return 0f
+        return 0f //Wenn results null ist
     }
 
         fun setResults(
@@ -164,7 +156,8 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
             // Berechnung von Distanz Daumen- zu Indexfingerspitze
             val distance = calculateDistance()
-            Log.d("Distanz", "Distanz: $distance")
+            //Log.d("Distanz", "Distanz: $distance")
+            //Log.d("Landmark Liste", "Größe der Liste: ${gestureRecognizerResult.landmarks().size}")
         }
 
             companion object {
