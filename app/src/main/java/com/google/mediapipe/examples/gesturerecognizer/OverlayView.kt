@@ -18,8 +18,8 @@ import android.util.Log
 import java.util.Locale.Category
 import kotlin.math.pow
 
-class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs),
-    CameraFragment.OverlayViewListener {
+class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+    //CameraFragment.OverlayViewListener
 
     private var results: GestureRecognizerResult? = null
     private var linePaint = Paint()
@@ -78,7 +78,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
                     val y = normalizedLandmark.y() * imageHeight * scaleFactor
                     var radius = LANDMARK_POINT_RADIUS //default radius
 
-                    // Check if it's the 4th landmark, and change the color for it
+                    // Verändere Farbe bei Erkennung von Landmarke 4
                     if (i == 4) {
                         pointPaint.color = ContextCompat.getColor(context!!, R.color.htwOrange)
                         radius = LARGE_LANDMARK_POINT_RADIUS
@@ -113,7 +113,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         }
     }
 
-    override fun calculateDistance(): Float {
+    fun calculateDistance(): Float {
         results?.let { gestureRecognizerResult ->
             for (landmark in gestureRecognizerResult.landmarks()) {
                 //for (i in 0 until landmark.size) {
@@ -157,7 +157,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
             // Berechnung von Distanz Daumen- zu Indexfingerspitze
             val distance = calculateDistance()
-            Log.d("Distanz", "Distanz: $distance")
+            //Log.d("Distanz", "Distanz: $distance")
             //Log.d("Landmark Liste", "Größe der Liste: ${gestureRecognizerResult.landmarks().size}")
         }
 

@@ -25,7 +25,10 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
     import androidx.recyclerview.widget.LinearLayoutManager
     import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
     import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
+    import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
+    import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
     import com.google.mediapipe.examples.gesturerecognizer.OverlayView
+    import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
     import com.google.mediapipe.examples.gesturerecognizer.R
     import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
     import com.google.mediapipe.tasks.vision.core.RunningMode
@@ -68,31 +71,19 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
 
         private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
         private lateinit var imageView: ImageView
-        //private val matrix = Matrix()
-        //private var previousX: Float = 0f
-        //private var previousY: Float = 0f
 
-        //private var overlayViewListener: OverlayViewListener? = null //Objekt von OverlayViewListener oder null, Vermeidung von NUllPointerException
-        //private var zoomFactor = 1.0f //Startwert für Zoomfaktor
+       // private var results: GestureRecognizerResult? = null
 
-        /* private val imageResourceIds = arrayOf(
-             R.drawable.image_000001
-             )
-         */
+        private var imageBitmaps: List<Bitmap> = mutableListOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
 
-        private var imageBitmaps: List<Bitmap> = listOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
-        private var startPosLandmark0x: Float? = null //Variable x-Startposition für landmark 0
-        private var startPosLandmark0y: Float? = null //Variable y-Startposition für landmark 0
+        private var startPosX: Float? = null //Variablen x,y-Startposition für Hand
+        private var startPosY: Float? = null
 
-        private fun displayZoomedBitmap() {
-            if (currentImageIndex in imageBitmaps.indices) {
-                val originalBitmap = imageBitmaps[currentImageIndex]
-
-                // Originale Bitmap Eigenschaften
-                Log.d("BitmapInfo", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
-
-                val zoomedBitmap = createZoomedBitmap(originalBitmap)
-                imageView.setImageBitmap(zoomedBitmap)
+        private fun loadBitmapFromResource(): List<Bitmap> {
+            val fields = R.raw::class.java.fields //Felder aus Java Klasse
+            return fields.mapNotNull { field ->
+                val id = field.getInt(null)
+                BitmapFactory.decodeResource(resources, id)// Umwandeln von Integer ID in Bitmap
             }
         }
         private fun createZoomedBitmap(originalBitmap: Bitmap): Bitmap {
@@ -102,14 +93,19 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
             val height = originalBitmap.height / 2
             Log.d("ZoomBitmap", "Zoomed Bitmap - x: $x, y: $y, width: $width, height: $height")
             return Bitmap.createBitmap(originalBitmap, x, y, width, height)
-
         }
 
-        private fun loadBitmapFromResource(): List<Bitmap> {
-            val fields = R.raw::class.java.fields //Felder aus Java Klasse
-            return fields.mapNotNull { field ->
-                val id = field.getInt(null)
-                BitmapFactory.decodeResource(resources, id)// Umwandeln von Integer ID in Bitmap
+        private fun displayZoomedBitmap() {
+            if (currentImageIndex in imageBitmaps.indices) {
+                //Abrufen der aktuellen Bitmap aus imageBitmaps und speichern in originalBitmap
+                val originalBitmap = imageBitmaps[currentImageIndex]
+
+                // Originale Bitmap Eigenschaften
+                Log.d("BitmapInfo", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
+
+                //Aufruf von fun createZoomedBitmap und Übergabe von originalBitmap, setzen in imageView
+                val zoomedBitmap = createZoomedBitmap(originalBitmap)
+                imageView.setImageBitmap(zoomedBitmap)
             }
         }
 /*
@@ -277,7 +273,7 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
             imageView = fragmentCameraBinding.imageView
             imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
             displayZoomedBitmap()
-            loadBitmapFromResource()
+            //loadBitmapFromResource()
         }
 
 
@@ -500,20 +496,25 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
                                 when (category) {
                                     "Thumb_Up" -> {
                                         nextImage()
-                                        lastImageChangeTime = currentTime // Stoppuhr wieder auf 0 setzen.
+                                        lastImageChangeTime =
+                                            currentTime // Stoppuhr wieder auf 0 setzen.
                                     }
+
                                     "Thumb_Down" -> {
                                         previousImage()
                                         lastImageChangeTime = currentTime
                                     }
+
                                     "Closed_Fist" -> {
-                                        lastImageChangeTime = currentTime
+                                        val handPosition = getHandPosition(resultBundle.results.first())
+                                        performPanning(handPosition)
                                     }
                                 }
                             }
                         }
                     }
-                } else {
+                }
+            } else {
                     gestureRecognizerResultAdapter.updateResults(emptyList())
                 }
             }
@@ -532,7 +533,56 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
             // Force a redraw
             fragmentCameraBinding.overlay.invalidate()
         }
-    }
+
+        fun getHandPosition(results: GestureRecognizerResult): Pair<Float, Float> {
+            val landmarks = results.landmarks().get(0) // Landmarken aus Hand 1
+            if (landmarks.isNotEmpty()) {
+                val landmark = landmarks[0] //Deklariere Landmarke #0 = Handwurzel
+
+                // Berechne und skaliere x,y Koordinaten relativ zu imageView
+                val x = landmark.x() * imageView.width
+                val y = landmark.y() * imageView.height
+                //val z = landmark.z() * imageView.width
+
+                return Pair(x, y)
+            }
+            return Pair(0f, 0f) //Wenn keine Landmarken vorhanden
+        }
+
+        private var lastLogTime = 0L // Initialisiere mit 0
+        private fun logPeriodically(tag: String, message: String) {
+            val currentTime = System.currentTimeMillis()
+            if (currentTime - lastLogTime > 1000) { // 1 Sekunde
+                Log.d(tag, message)
+                lastLogTime = currentTime // Aktualisiere
+            }
+        }
+        fun performPanning(handPosition: Pair<Float, Float>) {
+            if (startPosX == null || startPosY == null) {
+                startPosX = handPosition.first
+                startPosY = handPosition.second
+            } else {
+                //Berechnung der Verschiebung: Differenz zwischen aktueller
+                //Position der Hand und der zuletzt gespeicherten Position
+                val deltaX = handPosition.first - startPosX!! //!!: sicher, dass nicht null
+                val deltaY = handPosition.second - startPosY!!
+
+                logPeriodically("Berechnung Koordinaten", "deltaX $deltaX + deltaY $deltaY")
+
+                //Erstelle Matrix und verknüpfe mit imageView
+                val matrix = Matrix()
+                matrix.set(imageView.imageMatrix)
+                matrix.postTranslate(deltaX, deltaY) //Verschiebe Bildmatrix und bleibe da
+
+                imageView.imageMatrix = matrix
+                imageView.invalidate()
+
+                //Setze Startposi zurück für kontinuierliches Panning
+                startPosX = handPosition.first
+                startPosY = handPosition.second
+            }
+        }
+
 
     override fun onError(error: String, errorCode: Int) {
         activity?.runOnUiThread {
