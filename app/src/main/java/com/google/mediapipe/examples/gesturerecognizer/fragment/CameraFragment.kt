@@ -4,10 +4,12 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
     import android.content.res.Configuration
     import android.graphics.Bitmap
     import android.graphics.BitmapFactory
+    import android.graphics.Matrix
     import android.graphics.drawable.BitmapDrawable
     import android.os.Bundle
     import android.util.Log
     import android.view.LayoutInflater
+    import android.view.MotionEvent
     import android.view.View
     import android.view.ViewGroup
     import android.widget.AdapterView
@@ -18,10 +20,12 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
     import androidx.core.content.ContextCompat
     import androidx.fragment.app.Fragment
     import androidx.fragment.app.activityViewModels
+    import androidx.fragment.app.findFragment
     import androidx.navigation.Navigation
     import androidx.recyclerview.widget.LinearLayoutManager
     import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
     import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
+    import com.google.mediapipe.examples.gesturerecognizer.OverlayView
     import com.google.mediapipe.examples.gesturerecognizer.R
     import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
     import com.google.mediapipe.tasks.vision.core.RunningMode
@@ -60,17 +64,25 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
         private lateinit var backgroundExecutor: ExecutorService
 
         private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
-        private lateinit var imageViewDisplay: ImageView
+        //private lateinit var imageViewDisplay: ImageView
 
         private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
+        private lateinit var imageView: ImageView
+        //private val matrix = Matrix()
+        //private var previousX: Float = 0f
+        //private var previousY: Float = 0f
+
+        //private var overlayViewListener: OverlayViewListener? = null //Objekt von OverlayViewListener oder null, Vermeidung von NUllPointerException
+        //private var zoomFactor = 1.0f //Startwert für Zoomfaktor
 
         /* private val imageResourceIds = arrayOf(
              R.drawable.image_000001
              )
          */
 
-        //private var imageResources: List<Int> = buildImageList()
         private var imageBitmaps: List<Bitmap> = listOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
+        private var startPosLandmark0x: Float? = null //Variable x-Startposition für landmark 0
+        private var startPosLandmark0y: Float? = null //Variable y-Startposition für landmark 0
 
         private fun displayZoomedBitmap() {
             if (currentImageIndex in imageBitmaps.indices) {
@@ -80,15 +92,14 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
                 Log.d("BitmapInfo", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
 
                 val zoomedBitmap = createZoomedBitmap(originalBitmap)
-                imageViewDisplay.setImageBitmap(zoomedBitmap)
+                imageView.setImageBitmap(zoomedBitmap)
             }
         }
         private fun createZoomedBitmap(originalBitmap: Bitmap): Bitmap {
-            val x = originalBitmap.width / 4
-            val y = originalBitmap.height / 4
+            val x = originalBitmap.width / 2
+            val y = originalBitmap.height / 2
             val width = originalBitmap.width / 2
             val height = originalBitmap.height / 2
-
             Log.d("ZoomBitmap", "Zoomed Bitmap - x: $x, y: $y, width: $width, height: $height")
             return Bitmap.createBitmap(originalBitmap, x, y, width, height)
 
@@ -118,24 +129,24 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
                             imageView.setImageBitmap(bitmap)
                             //imageViewDisplay.setImageResource(imageResources[currentImageIndex])
                         }*/
-
+/*
         private fun loadImageFromResource(imageView: ImageView) {
             if (currentImageIndex in imageBitmaps.indices) {
                 imageView.setImageBitmap(imageBitmaps[currentImageIndex])
             }
         }
-
+*/
         private fun nextImage() {
             if (currentImageIndex < imageBitmaps.size - 1) {
                 currentImageIndex++
-                loadImageFromResource(imageViewDisplay)
+                displayZoomedBitmap()
             }
         }
 
         private fun previousImage() {
             if (currentImageIndex > 0) {
                 currentImageIndex--
-                loadImageFromResource(imageViewDisplay)
+                displayZoomedBitmap()
             }
         }
 
@@ -194,7 +205,7 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
             return fragmentCameraBinding.root
         }
 
-        @SuppressLint("MissingPermission")
+        @SuppressLint("MissingPermission", "ClickableViewAccessibility")
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) { //Alle Reaktionen beim Starten der App
             super.onViewCreated(view, savedInstanceState)
             with(fragmentCameraBinding.recyclerviewResults) {
@@ -202,6 +213,41 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
                 adapter = gestureRecognizerResultAdapter
             }
 
+            //imageView = view.findViewById(R.id.imageView)
+            /*
+                        //Quellen: https://gist.github.com/emedinaa/135f89d288ba64db0fe21951b396c58c
+                        // https://developer.android.com/develop/ui/views/graphics/opengl/touch
+                        // https://medium.com/a-problem-like-maria/understanding-android-matrix-transformations-25e028f56dc7
+                        imageView.setOnTouchListener { v, event -> //Listener für Berührungsereignisse
+                            val action = event.action
+                            when(action) {
+                                MotionEvent.ACTION_DOWN -> {
+                                    // Speichern von intialen Koordinaten
+                                    previousX = event.x
+                                    previousY = event.y
+                                }
+                                MotionEvent.ACTION_MOVE -> {
+                                    // Veränderung zwischen ACTION_DOWN und ACTION_UP, berechne dx und dy
+                                    val dx = event.x - previousX
+                                    val dy = event.y - previousY
+
+                                    // Setzen der Translation an neue dx und dy Koordinaten und dortiges speichern
+                                    matrix.postTranslate(dx, dy)
+
+                                    // Update von neuer Matrix auf ImageView
+                                    imageView.imageMatrix = matrix
+
+                                    // Remember position for next event
+                                    previousX = event.x
+                                    previousY = event.y
+                                }
+                                MotionEvent.ACTION_UP -> {
+                                    // Touch Event beendet, Bildschirm losgelassen
+                                }
+                            }
+                            true
+                        }
+            */
             // Initialize our background executor
             backgroundExecutor = Executors.newSingleThreadExecutor()
 
@@ -228,14 +274,10 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
             // Attach listeners to UI control widgets
             initBottomSheetControls()
 
-            imageViewDisplay = fragmentCameraBinding.imageView
+            imageView = fragmentCameraBinding.imageView
             imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
             displayZoomedBitmap()
-            loadImageFromResource(imageViewDisplay)
-            //loadImageFromResource(imageViewDisplay)
-            //fragmentCameraBinding.buttonNext.setOnClickListener { nextImage() }
-            //fragmentCameraBinding.buttonPrevious.setOnClickListener { previousImage() }
-
+            loadBitmapFromResource()
         }
 
 
@@ -432,22 +474,6 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
             fragmentCameraBinding.viewFinder.display.rotation
     }
 
-
-        //private var isZoomedIn = false //ZoomIn auf false setzen
-        //private val zoomFactor = 2.0f //Zoomstärke (evtl. anpassen)
-
-        /*
-        private fun zoomInBitmap() {
-            if (isZoomedIn) {
-                imageViewDisplay.scaleX = 1f
-                imageViewDisplay.scaleY = 1f
-                isZoomedIn = false
-            } else {
-                imageViewDisplay.scaleX = zoomFactor
-                imageViewDisplay.scaleY = zoomFactor
-                isZoomedIn = true
-            }
-        }*/
     // Update UI after a hand gesture has been recognized. Extracts original
     // image height/width to scale and place the landmarks properly through
     // OverlayView. Only one result is expected at a time. If two or more
@@ -480,9 +506,9 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
                                         previousImage()
                                         lastImageChangeTime = currentTime
                                     }
-                                    //"Closed_Fist" -> {
-                                      //  zoomInBitmap()
-                                    //}
+                                    "Closed_Fist" -> {
+                                        lastImageChangeTime = currentTime
+                                    }
                                 }
                             }
                         }
@@ -520,4 +546,8 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
             }
         }
     }
+
+        interface OverlayViewListener {
+            fun calculateDistance(): Float
+        }
 }

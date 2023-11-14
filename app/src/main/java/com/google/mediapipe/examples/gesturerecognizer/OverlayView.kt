@@ -18,7 +18,8 @@ import android.util.Log
 import java.util.Locale.Category
 import kotlin.math.pow
 
-class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
+class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs),
+    CameraFragment.OverlayViewListener {
 
     private var results: GestureRecognizerResult? = null
     private var linePaint = Paint()
@@ -112,7 +113,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         }
     }
 
-    private fun calculateDistance(): Float {
+    override fun calculateDistance(): Float {
         results?.let { gestureRecognizerResult ->
             for (landmark in gestureRecognizerResult.landmarks()) {
                 //for (i in 0 until landmark.size) {
@@ -156,7 +157,7 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
             // Berechnung von Distanz Daumen- zu Indexfingerspitze
             val distance = calculateDistance()
-            //Log.d("Distanz", "Distanz: $distance")
+            Log.d("Distanz", "Distanz: $distance")
             //Log.d("Landmark Liste", "Größe der Liste: ${gestureRecognizerResult.landmarks().size}")
         }
 
