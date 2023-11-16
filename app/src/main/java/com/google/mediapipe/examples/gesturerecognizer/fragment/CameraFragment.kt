@@ -1,283 +1,259 @@
 package com.google.mediapipe.examples.gesturerecognizer.fragment
 
-    import android.annotation.SuppressLint
-    import android.content.res.Configuration
-    import android.graphics.Bitmap
-    import android.graphics.BitmapFactory
-    import android.graphics.Matrix
-    import android.graphics.drawable.BitmapDrawable
-    import android.os.Bundle
-    import android.util.Log
-    import android.view.LayoutInflater
-    import android.view.MotionEvent
-    import android.view.View
-    import android.view.ViewGroup
-    import android.widget.AdapterView
-    import android.widget.ImageView
-    import android.widget.Toast
-    import androidx.camera.core.*
-    import androidx.camera.lifecycle.ProcessCameraProvider
-    import androidx.core.content.ContextCompat
-    import androidx.fragment.app.Fragment
-    import androidx.fragment.app.activityViewModels
-    import androidx.fragment.app.findFragment
-    import androidx.navigation.Navigation
-    import androidx.recyclerview.widget.LinearLayoutManager
-    import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
-    import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
-    import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
-    import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
-    import com.google.mediapipe.examples.gesturerecognizer.OverlayView
-    import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
-    import com.google.mediapipe.examples.gesturerecognizer.R
-    import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
-    import com.google.mediapipe.tasks.vision.core.RunningMode
-    import java.util.*
-    import java.util.concurrent.ExecutorService
-    import java.util.concurrent.Executors
-    import java.util.concurrent.TimeUnit
+import android.annotation.SuppressLint
+import android.content.res.Configuration
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
+import android.graphics.Matrix
+import android.graphics.drawable.BitmapDrawable
+import android.os.Bundle
+import android.util.Log
+import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.View
+import android.view.ViewGroup
+import android.widget.AdapterView
+import android.widget.ImageView
+import android.widget.Toast
+import androidx.camera.core.*
+import androidx.camera.lifecycle.ProcessCameraProvider
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.findFragment
+import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
+import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
+import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
+import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
+import com.google.mediapipe.examples.gesturerecognizer.OverlayView
+import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
+import com.google.mediapipe.examples.gesturerecognizer.R
+import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
+import com.google.mediapipe.tasks.vision.core.RunningMode
+import java.lang.Float.max
+import java.lang.Float.min
+import java.util.*
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit
+import kotlin.math.max
+import kotlin.math.min
 
-    class CameraFragment : Fragment(),
-        GestureRecognizerHelper.GestureRecognizerListener {
+class CameraFragment : Fragment(),
+    GestureRecognizerHelper.GestureRecognizerListener {
 
-        companion object {
-            private const val TAG = "Hand gesture recognizer"
+    companion object {
+        private const val TAG = "Hand gesture recognizer"
+    }
+
+    private var _fragmentCameraBinding: FragmentCameraBinding? = null
+
+    private val fragmentCameraBinding
+        get() = _fragmentCameraBinding!!
+
+    private lateinit var gestureRecognizerHelper: GestureRecognizerHelper
+    private val viewModel: MainViewModel by activityViewModels()
+    private var defaultNumResults = 1
+    private val gestureRecognizerResultAdapter: GestureRecognizerResultsAdapter by lazy {
+        GestureRecognizerResultsAdapter().apply {
+            updateAdapterSize(defaultNumResults)
+        }
+    }
+    private var preview: Preview? = null
+    private var imageAnalyzer: ImageAnalysis? = null
+    private var camera: Camera? = null
+    private var cameraProvider: ProcessCameraProvider? = null
+    private var cameraFacing = CameraSelector.LENS_FACING_FRONT
+
+    /** Blocking ML operations are performed using this executor */
+    private lateinit var backgroundExecutor: ExecutorService
+
+    private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
+    //private lateinit var imageViewDisplay: ImageView
+
+    private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
+    private lateinit var imageView: ImageView
+
+    // private var results: GestureRecognizerResult? = null
+
+    private var imageBitmaps: List<Bitmap> = mutableListOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
+
+    private var startPosX: Float? = null //Variablen x,y-Startposition für Hand
+    private var startPosY: Float? = null
+
+    private fun loadBitmapFromResource(): List<Bitmap> {
+        val fields = R.raw::class.java.fields //Felder aus Java Klasse
+        return fields.mapNotNull { field ->
+            val id = field.getInt(null)
+            BitmapFactory.decodeResource(resources, id)// Umwandeln von Integer ID in Bitmap
+        }
+    }
+    /*
+    private fun createZoomedBitmap(originalBitmap: Bitmap): Bitmap {
+        val x = originalBitmap.width / 2
+        val y = originalBitmap.height / 2
+        val width = originalBitmap.width / 2
+        val height = originalBitmap.height / 2
+        Log.d("ZoomedBitmap", "zoomedBitmap - x: $x, y: $y, width: $width, height: $height")
+        return Bitmap.createBitmap(originalBitmap, x, y, width, height)
+    }
+    */
+
+    private fun createShiftedBitmap(originalBitmap: Bitmap, deltaX: Float, deltaY: Float, zoomFactor: Float): Bitmap {
+        val x = originalBitmap.width / 4
+        val y = originalBitmap.height / 4
+        val width = originalBitmap.width / 2
+        val height = originalBitmap.height / 2
+        Log.d("ZoomedBitmap", "zoomedBitmap - x: $x, y: $y, width: $width, height: $height")
+        return Bitmap.createBitmap(originalBitmap, x-deltaX.toInt(), y-deltaY.toInt(), width, height)
+    }
+
+
+    private fun displayBitmap() {
+        if (currentImageIndex in imageBitmaps.indices) {
+            //Abrufen der aktuellen Bitmap aus imageBitmaps und speichern in originalBitmap
+            val originalBitmap = imageBitmaps[currentImageIndex]
+            // originalBitmap Maße
+            Log.d("OriginalBitmap", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
+
+            //Aufruf von fun createZoomedBitmap und Übergabe von originalBitmap, setzen in imageView
+            //val zoomedBitmap = createZoomedBitmap(originalBitmap)
+            imageView.setImageBitmap(originalBitmap)
+        }
+    }
+
+    private fun createZoomedBitmap(originalBitmap: Bitmap, startPosX: Float, startPosY: Float, zoomFactor: Float): Bitmap {
+        val width = originalBitmap.width
+        val height = originalBitmap.height
+
+        // Berechne die Größe für Zoom
+        val zoomWidth = (width / zoomFactor).toInt()
+        val zoomHeight = (height / zoomFactor).toInt()
+
+        // Berechne linke obere Ecke des zu zoomenden Bereichs
+        val x = max(0, min(width - zoomWidth, (startPosX - zoomWidth / 2).toInt()))
+        val y = max(0, min(height - zoomHeight, (startPosY - zoomHeight / 2).toInt()))
+
+        // Extrahiere den zu zoomenden Bereich und skaliere ihn hoch
+        val zoomedBitmap = Bitmap.createBitmap(originalBitmap, x, y, zoomWidth, zoomHeight)
+        return Bitmap.createScaledBitmap(zoomedBitmap, width, height, true)
+    }
+
+    private fun displayBitmap(roi: Bitmap) {
+        imageView.setImageBitmap(roi)
+    }
+    private fun nextImage() {
+        if (currentImageIndex < imageBitmaps.size - 1) {
+            currentImageIndex++
+            displayBitmap()
+        }
+    }
+
+    private fun previousImage() {
+        if (currentImageIndex > 0) {
+            currentImageIndex--
+            displayBitmap()
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Make sure that all permissions are still present, since the
+        // user could have removed them while the app was in paused state.
+        if (!PermissionsFragment.hasPermissions(requireContext())) {
+            Navigation.findNavController(
+                requireActivity(), R.id.fragment_container
+            ).navigate(R.id.action_camera_to_permissions)
         }
 
-        private var _fragmentCameraBinding: FragmentCameraBinding? = null
-
-        private val fragmentCameraBinding
-            get() = _fragmentCameraBinding!!
-
-        private lateinit var gestureRecognizerHelper: GestureRecognizerHelper
-        private val viewModel: MainViewModel by activityViewModels()
-        private var defaultNumResults = 1
-        private val gestureRecognizerResultAdapter: GestureRecognizerResultsAdapter by lazy {
-            GestureRecognizerResultsAdapter().apply {
-                updateAdapterSize(defaultNumResults)
+        // Start the GestureRecognizerHelper again when users come back
+        // to the foreground.
+        backgroundExecutor.execute {
+            if (gestureRecognizerHelper.isClosed()) {
+                gestureRecognizerHelper.setupGestureRecognizer()
             }
         }
-        private var preview: Preview? = null
-        private var imageAnalyzer: ImageAnalysis? = null
-        private var camera: Camera? = null
-        private var cameraProvider: ProcessCameraProvider? = null
-        private var cameraFacing = CameraSelector.LENS_FACING_FRONT
+    }
 
-        /** Blocking ML operations are performed using this executor */
-        private lateinit var backgroundExecutor: ExecutorService
+    override fun onPause() {
+        super.onPause()
+        if (this::gestureRecognizerHelper.isInitialized) {
+            viewModel.setMinHandDetectionConfidence(gestureRecognizerHelper.minHandDetectionConfidence)
+            viewModel.setMinHandTrackingConfidence(gestureRecognizerHelper.minHandTrackingConfidence)
+            viewModel.setMinHandPresenceConfidence(gestureRecognizerHelper.minHandPresenceConfidence)
+            viewModel.setDelegate(gestureRecognizerHelper.currentDelegate)
 
-        private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
-        //private lateinit var imageViewDisplay: ImageView
-
-        private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
-        private lateinit var imageView: ImageView
-
-       // private var results: GestureRecognizerResult? = null
-
-        private var imageBitmaps: List<Bitmap> = mutableListOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
-
-        private var startPosX: Float? = null //Variablen x,y-Startposition für Hand
-        private var startPosY: Float? = null
-
-        private fun loadBitmapFromResource(): List<Bitmap> {
-            val fields = R.raw::class.java.fields //Felder aus Java Klasse
-            return fields.mapNotNull { field ->
-                val id = field.getInt(null)
-                BitmapFactory.decodeResource(resources, id)// Umwandeln von Integer ID in Bitmap
-            }
+            // Close the Gesture Recognizer helper and release resources
+            backgroundExecutor.execute { gestureRecognizerHelper.clearGestureRecognizer() }
         }
-        private fun createZoomedBitmap(originalBitmap: Bitmap): Bitmap {
-            val x = originalBitmap.width / 2
-            val y = originalBitmap.height / 2
-            val width = originalBitmap.width / 2
-            val height = originalBitmap.height / 2
-            Log.d("ZoomBitmap", "Zoomed Bitmap - x: $x, y: $y, width: $width, height: $height")
-            return Bitmap.createBitmap(originalBitmap, x, y, width, height)
+    }
+
+    override fun onDestroyView() {
+        _fragmentCameraBinding = null
+        super.onDestroyView()
+
+        // Shut down our background executor
+        backgroundExecutor.shutdown()
+        backgroundExecutor.awaitTermination(
+            Long.MAX_VALUE, TimeUnit.NANOSECONDS
+        )
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        _fragmentCameraBinding =
+            FragmentCameraBinding.inflate(inflater, container, false)
+
+        return fragmentCameraBinding.root
+    }
+
+    @SuppressLint("MissingPermission", "ClickableViewAccessibility")
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) { //Alle Reaktionen beim Starten der App
+        super.onViewCreated(view, savedInstanceState)
+        with(fragmentCameraBinding.recyclerviewResults) {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = gestureRecognizerResultAdapter
         }
+        // Initialize our background executor
+        backgroundExecutor = Executors.newSingleThreadExecutor()
 
-        private fun displayZoomedBitmap() {
-            if (currentImageIndex in imageBitmaps.indices) {
-                //Abrufen der aktuellen Bitmap aus imageBitmaps und speichern in originalBitmap
-                val originalBitmap = imageBitmaps[currentImageIndex]
-
-                // Originale Bitmap Eigenschaften
-                Log.d("BitmapInfo", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
-
-                //Aufruf von fun createZoomedBitmap und Übergabe von originalBitmap, setzen in imageView
-                val zoomedBitmap = createZoomedBitmap(originalBitmap)
-                imageView.setImageBitmap(zoomedBitmap)
-            }
-        }
-/*
-                private fun buildImageList(): List<Int> { //erzeuge dynamische Liste von allen Bildern in /raw ohne spezifische Auflistung zu erzeugen
-                    val fields = R.raw::class.java.fields //Felder aus Java Klasse
-                    val imageList = mutableListOf<Int>() //leere, veränderbare Liste für IDs der Bilder
-
-                    for (field in fields) {
-                        val id = field.getInt(null) //getter Methode für Id des Resource-Feldes --> null weil Java Konventionen
-                        imageList.add(id) //Füge Id zur Liste hinzu
-                    }
-                    return imageList
-                }*/
-        /*
-                        private fun loadImageFromResource(imageView: ImageView) {
-                            val bitmap = BitmapFactory.decodeResource(resources, imageResources[currentImageIndex])
-                            imageView.setImageBitmap(bitmap)
-                            //imageViewDisplay.setImageResource(imageResources[currentImageIndex])
-                        }*/
-/*
-        private fun loadImageFromResource(imageView: ImageView) {
-            if (currentImageIndex in imageBitmaps.indices) {
-                imageView.setImageBitmap(imageBitmaps[currentImageIndex])
-            }
-        }
-*/
-        private fun nextImage() {
-            if (currentImageIndex < imageBitmaps.size - 1) {
-                currentImageIndex++
-                displayZoomedBitmap()
-            }
+        // Wait for the views to be properly laid out
+        fragmentCameraBinding.viewFinder.post {
+            // Set up the camera and its use cases
+            setUpCamera()
         }
 
-        private fun previousImage() {
-            if (currentImageIndex > 0) {
-                currentImageIndex--
-                displayZoomedBitmap()
-            }
-        }
-
-        override fun onResume() {
-            super.onResume()
-            // Make sure that all permissions are still present, since the
-            // user could have removed them while the app was in paused state.
-            if (!PermissionsFragment.hasPermissions(requireContext())) {
-                Navigation.findNavController(
-                    requireActivity(), R.id.fragment_container
-                ).navigate(R.id.action_camera_to_permissions)
-            }
-
-            // Start the GestureRecognizerHelper again when users come back
-            // to the foreground.
-            backgroundExecutor.execute {
-                if (gestureRecognizerHelper.isClosed()) {
-                    gestureRecognizerHelper.setupGestureRecognizer()
-                }
-            }
-        }
-
-        override fun onPause() {
-            super.onPause()
-            if (this::gestureRecognizerHelper.isInitialized) {
-                viewModel.setMinHandDetectionConfidence(gestureRecognizerHelper.minHandDetectionConfidence)
-                viewModel.setMinHandTrackingConfidence(gestureRecognizerHelper.minHandTrackingConfidence)
-                viewModel.setMinHandPresenceConfidence(gestureRecognizerHelper.minHandPresenceConfidence)
-                viewModel.setDelegate(gestureRecognizerHelper.currentDelegate)
-
-                // Close the Gesture Recognizer helper and release resources
-                backgroundExecutor.execute { gestureRecognizerHelper.clearGestureRecognizer() }
-            }
-        }
-
-        override fun onDestroyView() {
-            _fragmentCameraBinding = null
-            super.onDestroyView()
-
-            // Shut down our background executor
-            backgroundExecutor.shutdown()
-            backgroundExecutor.awaitTermination(
-                Long.MAX_VALUE, TimeUnit.NANOSECONDS
+        // Create the Hand Gesture Recognition Helper that will handle the
+        // inference
+        backgroundExecutor.execute {
+            gestureRecognizerHelper = GestureRecognizerHelper(
+                context = requireContext(),
+                runningMode = RunningMode.LIVE_STREAM,
+                minHandDetectionConfidence = viewModel.currentMinHandDetectionConfidence,
+                minHandTrackingConfidence = viewModel.currentMinHandTrackingConfidence,
+                minHandPresenceConfidence = viewModel.currentMinHandPresenceConfidence,
+                currentDelegate = viewModel.currentDelegate,
+                gestureRecognizerListener = this
             )
         }
 
-        override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View {
+        // Attach listeners to UI control widgets
+        initBottomSheetControls()
 
-            _fragmentCameraBinding =
-                FragmentCameraBinding.inflate(inflater, container, false)
-
-            return fragmentCameraBinding.root
-        }
-
-        @SuppressLint("MissingPermission", "ClickableViewAccessibility")
-        override fun onViewCreated(view: View, savedInstanceState: Bundle?) { //Alle Reaktionen beim Starten der App
-            super.onViewCreated(view, savedInstanceState)
-            with(fragmentCameraBinding.recyclerviewResults) {
-                layoutManager = LinearLayoutManager(requireContext())
-                adapter = gestureRecognizerResultAdapter
-            }
-
-            //imageView = view.findViewById(R.id.imageView)
-            /*
-                        //Quellen: https://gist.github.com/emedinaa/135f89d288ba64db0fe21951b396c58c
-                        // https://developer.android.com/develop/ui/views/graphics/opengl/touch
-                        // https://medium.com/a-problem-like-maria/understanding-android-matrix-transformations-25e028f56dc7
-                        imageView.setOnTouchListener { v, event -> //Listener für Berührungsereignisse
-                            val action = event.action
-                            when(action) {
-                                MotionEvent.ACTION_DOWN -> {
-                                    // Speichern von intialen Koordinaten
-                                    previousX = event.x
-                                    previousY = event.y
-                                }
-                                MotionEvent.ACTION_MOVE -> {
-                                    // Veränderung zwischen ACTION_DOWN und ACTION_UP, berechne dx und dy
-                                    val dx = event.x - previousX
-                                    val dy = event.y - previousY
-
-                                    // Setzen der Translation an neue dx und dy Koordinaten und dortiges speichern
-                                    matrix.postTranslate(dx, dy)
-
-                                    // Update von neuer Matrix auf ImageView
-                                    imageView.imageMatrix = matrix
-
-                                    // Remember position for next event
-                                    previousX = event.x
-                                    previousY = event.y
-                                }
-                                MotionEvent.ACTION_UP -> {
-                                    // Touch Event beendet, Bildschirm losgelassen
-                                }
-                            }
-                            true
-                        }
-            */
-            // Initialize our background executor
-            backgroundExecutor = Executors.newSingleThreadExecutor()
-
-            // Wait for the views to be properly laid out
-            fragmentCameraBinding.viewFinder.post {
-                // Set up the camera and its use cases
-                setUpCamera()
-            }
-
-            // Create the Hand Gesture Recognition Helper that will handle the
-            // inference
-            backgroundExecutor.execute {
-                gestureRecognizerHelper = GestureRecognizerHelper(
-                    context = requireContext(),
-                    runningMode = RunningMode.LIVE_STREAM,
-                    minHandDetectionConfidence = viewModel.currentMinHandDetectionConfidence,
-                    minHandTrackingConfidence = viewModel.currentMinHandTrackingConfidence,
-                    minHandPresenceConfidence = viewModel.currentMinHandPresenceConfidence,
-                    currentDelegate = viewModel.currentDelegate,
-                    gestureRecognizerListener = this
-                )
-            }
-
-            // Attach listeners to UI control widgets
-            initBottomSheetControls()
-
-            imageView = fragmentCameraBinding.imageView
-            imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
-            displayZoomedBitmap()
-            //loadBitmapFromResource()
-        }
+        imageView = fragmentCameraBinding.imageView
+        imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
+        displayBitmap()
+        //loadBitmapFromResource()
+    }
 
 
-        private fun initBottomSheetControls() {
+    private fun initBottomSheetControls() {
         // init bottom sheet settings
         fragmentCameraBinding.bottomSheetLayout.detectionThresholdValue.text =
             String.format(
@@ -496,8 +472,7 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
                                 when (category) {
                                     "Thumb_Up" -> {
                                         nextImage()
-                                        lastImageChangeTime =
-                                            currentTime // Stoppuhr wieder auf 0 setzen.
+                                        lastImageChangeTime = currentTime // Stoppuhr wieder auf 0 setzen.
                                     }
 
                                     "Thumb_Down" -> {
@@ -507,7 +482,17 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
 
                                     "Closed_Fist" -> {
                                         val handPosition = getHandPosition(resultBundle.results.first())
-                                        performPanning(handPosition)
+                                        val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex], handPosition.first, handPosition.second, 2.5f)
+                                        displayBitmap(zoomedBitmap)
+                                    }
+
+                                    "Open_Palm" -> {
+                                        displayBitmap(imageBitmaps[currentImageIndex])
+                                    }
+
+                                    "None" -> {
+                                        startPosX = null
+                                        startPosY = null
                                     }
                                 }
                             }
@@ -515,73 +500,78 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
                     }
                 }
             } else {
-                    gestureRecognizerResultAdapter.updateResults(emptyList())
-                }
-            }
-
-            fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
-                String.format("%d ms", resultBundle.inferenceTime)
-
-            // Pass necessary information to OverlayView for drawing on the canvas
-            fragmentCameraBinding.overlay.setResults(
-                resultBundle.results.first(),
-                resultBundle.inputImageHeight,
-                resultBundle.inputImageWidth,
-                RunningMode.LIVE_STREAM
-            )
-
-            // Force a redraw
-            fragmentCameraBinding.overlay.invalidate()
-        }
-
-        fun getHandPosition(results: GestureRecognizerResult): Pair<Float, Float> {
-            val landmarks = results.landmarks().get(0) // Landmarken aus Hand 1
-            if (landmarks.isNotEmpty()) {
-                val landmark = landmarks[0] //Deklariere Landmarke #0 = Handwurzel
-
-                // Berechne und skaliere x,y Koordinaten relativ zu imageView
-                val x = landmark.x() * imageView.width
-                val y = landmark.y() * imageView.height
-                //val z = landmark.z() * imageView.width
-
-                return Pair(x, y)
-            }
-            return Pair(0f, 0f) //Wenn keine Landmarken vorhanden
-        }
-
-        private var lastLogTime = 0L // Initialisiere mit 0
-        private fun logPeriodically(tag: String, message: String) {
-            val currentTime = System.currentTimeMillis()
-            if (currentTime - lastLogTime > 1000) { // 1 Sekunde
-                Log.d(tag, message)
-                lastLogTime = currentTime // Aktualisiere
+                gestureRecognizerResultAdapter.updateResults(emptyList())
             }
         }
-        fun performPanning(handPosition: Pair<Float, Float>) {
-            if (startPosX == null || startPosY == null) {
-                startPosX = handPosition.first
-                startPosY = handPosition.second
-            } else {
-                //Berechnung der Verschiebung: Differenz zwischen aktueller
-                //Position der Hand und der zuletzt gespeicherten Position
-                val deltaX = handPosition.first - startPosX!! //!!: sicher, dass nicht null
-                val deltaY = handPosition.second - startPosY!!
 
-                logPeriodically("Berechnung Koordinaten", "deltaX $deltaX + deltaY $deltaY")
+        fragmentCameraBinding.bottomSheetLayout.inferenceTimeVal.text =
+            String.format("%d ms", resultBundle.inferenceTime)
 
-                //Erstelle Matrix und verknüpfe mit imageView
-                val matrix = Matrix()
-                matrix.set(imageView.imageMatrix)
-                matrix.postTranslate(deltaX, deltaY) //Verschiebe Bildmatrix und bleibe da
+        // Pass necessary information to OverlayView for drawing on the canvas
+        fragmentCameraBinding.overlay.setResults(
+            resultBundle.results.first(),
+            resultBundle.inputImageHeight,
+            resultBundle.inputImageWidth,
+            RunningMode.LIVE_STREAM
+        )
 
-                imageView.imageMatrix = matrix
-                imageView.invalidate()
+        // Force a redraw
+        fragmentCameraBinding.overlay.invalidate()
+    }
 
-                //Setze Startposi zurück für kontinuierliches Panning
-                startPosX = handPosition.first
-                startPosY = handPosition.second
-            }
+    fun getHandPosition(results: GestureRecognizerResult): Pair<Float, Float> {
+        val landmarks = results.landmarks().get(0) // Landmarken aus Hand 1
+        if (landmarks.isNotEmpty()) {
+            val landmark0 = landmarks[0] //Deklariere Landmarke #0 = Handwurzel
+            logPeriodically("Landmarke 0", "$landmark0")
+
+            // Berechne und skaliere x,y Koordinaten relativ zu imageView
+            val x = landmark0.x() * imageView.width
+            val y = landmark0.y() * imageView.height
+
+            return Pair(x,y)
         }
+        return Pair(0f, 0f) //Wenn keine Landmarken vorhanden
+    }
+
+/*
+    private fun performPanning(handPosition: Pair<Float, Float>) {
+        if (startPosX == null || startPosY == null) { // if null -> begin of panning
+            startPosX = handPosition.first
+            startPosY = handPosition.second
+
+        } else {
+            //Berechnung der Verschiebung: Differenz zwischen aktueller
+            //Position der Hand und der zuletzt gespeicherten Startposition
+
+            val deltaX = handPosition.first - startPosX!! //!!: sicher, dass nicht null
+            val deltaY = handPosition.second - startPosY!!
+
+
+            logPeriodically("Berechnung Koordinaten", "deltaX:_ $deltaX + deltaY:_ $deltaY")
+
+            // Erstellen von Matrix und Anwenden auf das ImageView
+            val matrix = Matrix(imageView.imageMatrix)
+            //matrix.postTranslate(deltaX, deltaY) //Update auf Matrix
+            //imageView.imageMatrix = matrix
+            val roi = createShiftedBitmap(imageBitmaps[currentImageIndex], deltaX, deltaY, 2f)
+            displayBitmap(roi)
+
+            startPosX = handPosition.first
+            startPosY = handPosition.second
+        }
+    }
+
+ */
+
+    private var lastLogTime = 0L // Initialisiere mit 0
+    private fun logPeriodically(tag: String, message: String) {
+        val currentTime = System.currentTimeMillis()
+        if (currentTime - lastLogTime > 500) { // 1 Sekunde
+            Log.d(tag, message)
+            lastLogTime = currentTime // Aktualisiere
+        }
+    }
 
 
     override fun onError(error: String, errorCode: Int) {
@@ -597,7 +587,7 @@ package com.google.mediapipe.examples.gesturerecognizer.fragment
         }
     }
 
-        interface OverlayViewListener {
-            fun calculateDistance(): Float
-        }
+    interface OverlayViewListener {
+        fun calculateDistance(): Float
+    }
 }
