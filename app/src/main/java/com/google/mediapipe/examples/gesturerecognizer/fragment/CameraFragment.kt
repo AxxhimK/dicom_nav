@@ -125,21 +125,30 @@ class CameraFragment : Fragment(),
     }
 
     private fun createZoomedBitmap(originalBitmap: Bitmap, startPosX: Float, startPosY: Float, zoomFactor: Float): Bitmap {
-        val width = originalBitmap.width
-        val height = originalBitmap.height
+        val originalWidth = originalBitmap.width
+        val originalHeight = originalBitmap.height
 
-        // Berechne die Größe für Zoom
-        val zoomWidth = (width / zoomFactor).toInt()
-        val zoomHeight = (height / zoomFactor).toInt()
+        // Gezoomter Bereich berechnen (width/height)
+        val zoomedWidth = (originalWidth / zoomFactor).toInt()
+        val zoomedHeight = (originalHeight / zoomFactor).toInt()
 
-        // Berechne linke obere Ecke des zu zoomenden Bereichs
-        val x = max(0, min(width - zoomWidth, (startPosX - zoomWidth / 2).toInt()))
-        val y = max(0, min(height - zoomHeight, (startPosY - zoomHeight / 2).toInt()))
+        // Begrenzen von x und y, falls:
+        // deltaY und zoomedHeight > originalHeight
+        // deltaX und zoomedWidth > original Width
+        // max -> deltaX,Y darf nicht negativ werden
+        // min -> deltaX,Y darf nicht Maximalwert des originalBitmap überschreiten
+        val deltaX = max(0, min(originalWidth - zoomedWidth, (startPosX - (zoomedWidth / 2)).toInt()))
+        val deltaY = max(0, min(originalHeight - zoomedHeight, (startPosY - (zoomedHeight / 2)).toInt()))
 
-        // Extrahiere den zu zoomenden Bereich und skaliere ihn hoch
-        val zoomedBitmap = Bitmap.createBitmap(originalBitmap, x, y, zoomWidth, zoomHeight)
-        return Bitmap.createScaledBitmap(zoomedBitmap, width, height, true)
+        // Ausschneiden von Zoom-Bereich und hochskalieren auf Originalgröße der Bitmap
+        // Filter an für mehr Schärfe
+        val zoomedBitmap = Bitmap.createBitmap(originalBitmap, deltaX, deltaY, zoomedWidth, zoomedHeight)
+        return Bitmap.createScaledBitmap(zoomedBitmap, originalWidth, originalHeight, true)
     }
+
+    //Quellen:
+    //https://developer.android.com/reference/android/graphics/Bitmap#createScaledBitmap(android.graphics.Bitmap,%20int,%20int,%20boolean)
+    //https://shareg.pt/hB7B18p
 
     private fun displayBitmap(roi: Bitmap) {
         imageView.setImageBitmap(roi)
