@@ -162,10 +162,10 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         }
 
             companion object {
-                private const val LANDMARK_STROKE_WIDTH = 6F;
-                private const val LANDMARK_POINT_WIDTH = 6F;
-                private const val LANDMARK_POINT_RADIUS = 6F;
-                private const val LARGE_LANDMARK_POINT_RADIUS = 10F;
+                private const val LANDMARK_STROKE_WIDTH = 4F;
+                private const val LANDMARK_POINT_WIDTH = 4F;
+                private const val LANDMARK_POINT_RADIUS = 4F;
+                private const val LARGE_LANDMARK_POINT_RADIUS = 6F;
             }
 
             interface OverlayViewListener {

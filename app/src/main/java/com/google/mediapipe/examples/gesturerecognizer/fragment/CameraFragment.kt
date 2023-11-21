@@ -1,12 +1,15 @@
 package com.google.mediapipe.examples.gesturerecognizer.fragment
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Matrix
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.os.Environment
+import android.provider.ContactsContract.Directory
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -32,6 +35,9 @@ import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
 import com.google.mediapipe.examples.gesturerecognizer.R
 import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
 import com.google.mediapipe.tasks.vision.core.RunningMode
+import java.io.File
+import java.io.FileInputStream
+import java.io.IOException
 import java.lang.Float.max
 import java.lang.Float.min
 import java.util.*
@@ -80,8 +86,8 @@ class CameraFragment : Fragment(),
 
     private var imageBitmaps: List<Bitmap> = mutableListOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
 
-    private var startPosX: Float? = null //Variablen x,y-Startposition für Hand
-    private var startPosY: Float? = null
+    //private var startPosX: Float? = null //Variablen x,y-Startposition für Hand
+    //private var startPosY: Float? = null
 
     private fun loadBitmapFromResource(): List<Bitmap> {
         val fields = R.raw::class.java.fields //Felder aus Java Klasse
@@ -90,25 +96,21 @@ class CameraFragment : Fragment(),
             BitmapFactory.decodeResource(resources, id)// Umwandeln von Integer ID in Bitmap
         }
     }
-    /*
-    private fun createZoomedBitmap(originalBitmap: Bitmap): Bitmap {
-        val x = originalBitmap.width / 2
-        val y = originalBitmap.height / 2
-        val width = originalBitmap.width / 2
-        val height = originalBitmap.height / 2
-        Log.d("ZoomedBitmap", "zoomedBitmap - x: $x, y: $y, width: $width, height: $height")
-        return Bitmap.createBitmap(originalBitmap, x, y, width, height)
-    }
-    */
 
-    private fun createShiftedBitmap(originalBitmap: Bitmap, deltaX: Float, deltaY: Float, zoomFactor: Float): Bitmap {
-        val x = originalBitmap.width / 4
-        val y = originalBitmap.height / 4
-        val width = originalBitmap.width / 2
-        val height = originalBitmap.height / 2
-        Log.d("ZoomedBitmap", "zoomedBitmap - x: $x, y: $y, width: $width, height: $height")
-        return Bitmap.createBitmap(originalBitmap, x-deltaX.toInt(), y-deltaY.toInt(), width, height)
-    }
+/*
+    private fun loadBitmapsFromDevice(context: Context): List<Bitmap> {
+        val externalDirs = ContextCompat.getExternalFilesDirs(context, Environment.DIRECTORY_DOWNLOADS)
+        val downloadsDir = externalDirs.firstOrNull() ?: return emptyList()
+
+        val bitmaps = mutableListOf<Bitmap>()
+        downloadsDir.listFiles()?.forEach { file ->
+            val bitmap = BitmapFactory.decodeFile(file.absolutePath)
+            bitmap?.let { bitmaps.add(it) }
+        }
+
+        Log.d(TAG, "Number of bitmaps loaded: ${bitmaps.size}")
+        return bitmaps
+    }*/
 
 
     private fun displayBitmap() {
@@ -119,12 +121,11 @@ class CameraFragment : Fragment(),
             Log.d("OriginalBitmap", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
 
             //Aufruf von fun createZoomedBitmap und Übergabe von originalBitmap, setzen in imageView
-            //val zoomedBitmap = createZoomedBitmap(originalBitmap)
             imageView.setImageBitmap(originalBitmap)
         }
     }
 
-    private fun createZoomedBitmap(originalBitmap: Bitmap, startPosX: Float, startPosY: Float, zoomFactor: Float): Bitmap {
+    private fun createZoomedBitmap(originalBitmap: Bitmap, handPosX: Float, handPosY: Float, zoomFactor: Float): Bitmap {
         val originalWidth = originalBitmap.width
         val originalHeight = originalBitmap.height
 
@@ -137,8 +138,8 @@ class CameraFragment : Fragment(),
         // deltaX und zoomedWidth > original Width
         // max -> deltaX,Y darf nicht negativ werden
         // min -> deltaX,Y darf nicht Maximalwert des originalBitmap überschreiten
-        val deltaX = max(0, min(originalWidth - zoomedWidth, (startPosX - (zoomedWidth / 2)).toInt()))
-        val deltaY = max(0, min(originalHeight - zoomedHeight, (startPosY - (zoomedHeight / 2)).toInt()))
+        val deltaX = max(0, min(originalWidth - zoomedWidth, (handPosX - (zoomedWidth / 2)).toInt()))
+        val deltaY = max(0, min(originalHeight - zoomedHeight, (handPosY - (zoomedHeight / 2)).toInt()))
 
         // Ausschneiden von Zoom-Bereich und hochskalieren auf Originalgröße der Bitmap
         // Filter an für mehr Schärfe
@@ -149,10 +150,13 @@ class CameraFragment : Fragment(),
     //Quellen:
     //https://developer.android.com/reference/android/graphics/Bitmap#createScaledBitmap(android.graphics.Bitmap,%20int,%20int,%20boolean)
     //https://shareg.pt/hB7B18p
+    //https://www.geeksforgeeks.org/how-to-resize-a-bitmap-in-android/
+    //https://shareg.pt/LKnVBZ9
 
-    private fun displayBitmap(roi: Bitmap) {
+    private fun displayZoomedBitmap(roi: Bitmap) {
         imageView.setImageBitmap(roi)
     }
+
     private fun nextImage() {
         if (currentImageIndex < imageBitmaps.size - 1) {
             currentImageIndex++
@@ -254,11 +258,9 @@ class CameraFragment : Fragment(),
 
         // Attach listeners to UI control widgets
         initBottomSheetControls()
-
         imageView = fragmentCameraBinding.imageView
         imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
         displayBitmap()
-        //loadBitmapFromResource()
     }
 
 
@@ -491,17 +493,12 @@ class CameraFragment : Fragment(),
 
                                     "Closed_Fist" -> {
                                         val handPosition = getHandPosition(resultBundle.results.first())
-                                        val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex], handPosition.first, handPosition.second, 2.5f)
-                                        displayBitmap(zoomedBitmap)
+                                        val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex], handPosition.first, handPosition.second, 2f)
+                                        displayZoomedBitmap(zoomedBitmap)
                                     }
 
                                     "Open_Palm" -> {
-                                        displayBitmap(imageBitmaps[currentImageIndex])
-                                    }
-
-                                    "None" -> {
-                                        startPosX = null
-                                        startPosY = null
+                                        displayBitmap()
                                     }
                                 }
                             }
@@ -543,36 +540,6 @@ class CameraFragment : Fragment(),
         return Pair(0f, 0f) //Wenn keine Landmarken vorhanden
     }
 
-/*
-    private fun performPanning(handPosition: Pair<Float, Float>) {
-        if (startPosX == null || startPosY == null) { // if null -> begin of panning
-            startPosX = handPosition.first
-            startPosY = handPosition.second
-
-        } else {
-            //Berechnung der Verschiebung: Differenz zwischen aktueller
-            //Position der Hand und der zuletzt gespeicherten Startposition
-
-            val deltaX = handPosition.first - startPosX!! //!!: sicher, dass nicht null
-            val deltaY = handPosition.second - startPosY!!
-
-
-            logPeriodically("Berechnung Koordinaten", "deltaX:_ $deltaX + deltaY:_ $deltaY")
-
-            // Erstellen von Matrix und Anwenden auf das ImageView
-            val matrix = Matrix(imageView.imageMatrix)
-            //matrix.postTranslate(deltaX, deltaY) //Update auf Matrix
-            //imageView.imageMatrix = matrix
-            val roi = createShiftedBitmap(imageBitmaps[currentImageIndex], deltaX, deltaY, 2f)
-            displayBitmap(roi)
-
-            startPosX = handPosition.first
-            startPosY = handPosition.second
-        }
-    }
-
- */
-
     private var lastLogTime = 0L // Initialisiere mit 0
     private fun logPeriodically(tag: String, message: String) {
         val currentTime = System.currentTimeMillis()
@@ -594,9 +561,5 @@ class CameraFragment : Fragment(),
                 )
             }
         }
-    }
-
-    interface OverlayViewListener {
-        fun calculateDistance(): Float
     }
 }

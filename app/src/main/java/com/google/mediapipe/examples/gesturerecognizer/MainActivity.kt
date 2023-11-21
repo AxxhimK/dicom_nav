@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         // Hide the navigation toolbar
         activityMainBinding.navigation.visibility = View.GONE
 
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
         val navController = navHostFragment.navController
         activityMainBinding.navigation.setupWithNavController(navController)

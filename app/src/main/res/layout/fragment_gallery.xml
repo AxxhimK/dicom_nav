@@ -79,7 +79,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="top"
         android:layout_marginBottom="@dimen/bottom_sheet_peek_height"
-        android:background="@color/bottom_sheet_background"
         android:clipToPadding="true"
         android:padding="@dimen/bottom_sheet_padding"
         app:layout_anchor="@id/bottom_sheet_layout"

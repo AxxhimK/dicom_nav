@@ -62,7 +62,6 @@ class GalleryFragment : Fragment(),
             updateAdapterSize(defaultNumResults)
         }
     }
-
     /** Blocking ML operations are performed using this executor */
     private lateinit var backgroundExecutor: ScheduledExecutorService
 
@@ -465,6 +464,8 @@ class GalleryFragment : Fragment(),
     override fun onResults(resultBundle: GestureRecognizerHelper.ResultBundle) {
         // no-op
     }
+
+
 
     companion object {
         private const val TAG = "GalleryFragment"
