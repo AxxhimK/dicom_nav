@@ -5,7 +5,10 @@ import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Canvas
+import android.graphics.Color
 import android.graphics.Matrix
+import android.graphics.Paint
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
 import android.os.Environment
@@ -77,17 +80,14 @@ class CameraFragment : Fragment(),
     private lateinit var backgroundExecutor: ExecutorService
 
     private var currentImageIndex = 0 //Index der Bilder wird auf 0 gesetzt
-    //private lateinit var imageViewDisplay: ImageView
 
     private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
     private lateinit var imageView: ImageView
 
-    // private var results: GestureRecognizerResult? = null
-
     private var imageBitmaps: List<Bitmap> = mutableListOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
+    private lateinit var miniatureImageView: ImageView
 
-    //private var startPosX: Float? = null //Variablen x,y-Startposition für Hand
-    //private var startPosY: Float? = null
+    private var currentZoomFactor = 1.0f
 
     private fun loadBitmapFromResource(): List<Bitmap> {
         val fields = R.raw::class.java.fields //Felder aus Java Klasse
@@ -117,6 +117,7 @@ class CameraFragment : Fragment(),
         if (currentImageIndex in imageBitmaps.indices) {
             //Abrufen der aktuellen Bitmap aus imageBitmaps und speichern in originalBitmap
             val originalBitmap = imageBitmaps[currentImageIndex]
+            //val miniatureBitmap = displayMiniatureBitmap(originalBitmap, 200)
             // originalBitmap Maße
             Log.d("OriginalBitmap", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
 
@@ -125,7 +126,7 @@ class CameraFragment : Fragment(),
         }
     }
 
-    private fun createZoomedBitmap(originalBitmap: Bitmap, handPosX: Float, handPosY: Float, zoomFactor: Float): Bitmap {
+    private fun createZoomedBitmap(originalBitmap: Bitmap, landmarkX0: Float, landmarkY0: Float, zoomFactor: Float): Bitmap {
         val originalWidth = originalBitmap.width
         val originalHeight = originalBitmap.height
 
@@ -133,13 +134,11 @@ class CameraFragment : Fragment(),
         val zoomedWidth = (originalWidth / zoomFactor).toInt()
         val zoomedHeight = (originalHeight / zoomFactor).toInt()
 
-        // Begrenzen von x und y, falls:
-        // deltaY und zoomedHeight > originalHeight
-        // deltaX und zoomedWidth > original Width
+        // Begrenzen von x und y:
         // max -> deltaX,Y darf nicht negativ werden
         // min -> deltaX,Y darf nicht Maximalwert des originalBitmap überschreiten
-        val deltaX = max(0, min(originalWidth - zoomedWidth, (handPosX - (zoomedWidth / 2)).toInt()))
-        val deltaY = max(0, min(originalHeight - zoomedHeight, (handPosY - (zoomedHeight / 2)).toInt()))
+        val deltaX = max(0, min(originalWidth - zoomedWidth, (landmarkX0 - (zoomedWidth / 2)).toInt()))
+        val deltaY = max(0, min(originalHeight - zoomedHeight, (landmarkY0 - (zoomedHeight / 2)).toInt()))
 
         // Ausschneiden von Zoom-Bereich und hochskalieren auf Originalgröße der Bitmap
         // Filter an für mehr Schärfe
@@ -157,12 +156,55 @@ class CameraFragment : Fragment(),
         imageView.setImageBitmap(roi)
     }
 
+    private fun displayMiniatureBitmap()/*originalBitmap: Bitmap, sizeOfMinature: Int): Bitmap */{
+        val originalBitmap = imageBitmaps[currentImageIndex]
+        val miniatureBitmap = Bitmap.createScaledBitmap(originalBitmap, 200, 200, true)
+        //return Bitmap.createScaledBitmap(originalBitmap, sizeOfMinature, sizeOfMinature, true)
+        miniatureImageView.setImageBitmap(miniatureBitmap)
+    }
+
+    private fun drawSquareOnMiniature(originalBitmap: Bitmap, miniatureBitmap: Bitmap, landmarkX8: Float, landmarkY8: Float): Bitmap {
+        val canvas = Canvas(miniatureBitmap)
+        val paint = Paint().apply {
+            color = Color.parseColor("#FF5F00")
+            style = Paint.Style.FILL
+        }
+
+        val scaledX = (landmarkX8 / originalBitmap.width) * miniatureBitmap.width
+        val scaledY = (landmarkY8 / originalBitmap.height) * miniatureBitmap.height
+
+        canvas.drawRect(scaledX, scaledY, scaledX + 20, scaledY + 20, paint)
+        return miniatureBitmap
+    }
+
+    private fun updateMiniature(handLandmarks: HandLandmarks) {
+        val originalBitmap = imageBitmaps[currentImageIndex]
+        var miniatureBitmap = Bitmap.createScaledBitmap(originalBitmap, 200, 200, true)
+
+        //if (currentZoomFactor > 1.0f) {
+            miniatureBitmap = drawSquareOnMiniature(
+                originalBitmap,
+                miniatureBitmap,
+                handLandmarks.x8,
+                handLandmarks.y8
+            )
+            //Update miniatureImageView
+            miniatureImageView.setImageBitmap(miniatureBitmap)
+        }
+ //   }
+
+    private fun applyZoom(indexPosX: Float, indexPosY: Float) {
+        val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex], indexPosX, indexPosY,
+            currentZoomFactor)
+        displayZoomedBitmap(zoomedBitmap)
+    }
+
     private fun nextImage() {
         if (currentImageIndex < imageBitmaps.size - 1) {
             currentImageIndex++
             displayBitmap()
+            }
         }
-    }
 
     private fun previousImage() {
         if (currentImageIndex > 0) {
@@ -261,6 +303,8 @@ class CameraFragment : Fragment(),
         imageView = fragmentCameraBinding.imageView
         imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
         displayBitmap()
+        miniatureImageView = view.findViewById(R.id.miniatureImageView)
+        displayMiniatureBitmap()
     }
 
 
@@ -480,6 +524,10 @@ class CameraFragment : Fragment(),
                             val category = sortedCategories.first().categoryName()
                             val currentTime = System.currentTimeMillis()
                             if (currentTime - lastImageChangeTime >= 10) {
+                                // Position der Indexfingerspitze
+                                val handLandmarks = getLandmarkPosition(resultBundle.results.first())
+                                updateMiniature(handLandmarks)
+
                                 when (category) {
                                     "Thumb_Up" -> {
                                         nextImage()
@@ -492,13 +540,30 @@ class CameraFragment : Fragment(),
                                     }
 
                                     "Closed_Fist" -> {
-                                        val handPosition = getHandPosition(resultBundle.results.first())
-                                        val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex], handPosition.first, handPosition.second, 2f)
-                                        displayZoomedBitmap(zoomedBitmap)
+                                        //currentZoomFactor = 1.0f
+                                        //updateMiniature(handLandmarks)
+                                        displayBitmap()
+                                    //val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex],handLandmarks.x8, handLandmarks.y8, 2f)
+                                        //displayZoomedBitmap(zoomedBitmap)
+                                    }
+
+                                    "Pointing_Up" -> {
+                                        applyZoom(handLandmarks.x8, handLandmarks.y8)
+                                        if (currentZoomFactor < 3.5f) {
+                                            currentZoomFactor += 0.05f // Erhöhen von Zoom in 0.5 Schritten
+                                        }
+                                    }
+
+                                    "Victory" -> {
+                                        applyZoom(handLandmarks.x8, handLandmarks.y8)
+                                        if (currentZoomFactor > 2f) {
+                                            currentZoomFactor -= 0.05f // Verringern von Zoom in 0.5 Schritten
+                                        }
                                     }
 
                                     "Open_Palm" -> {
-                                        displayBitmap()
+                                        //Stoppt den Zoom wenn leer
+                                        //displayBitmap()
                                     }
                                 }
                             }
@@ -523,22 +588,40 @@ class CameraFragment : Fragment(),
 
         // Force a redraw
         fragmentCameraBinding.overlay.invalidate()
+        miniatureImageView.invalidate()
     }
 
-    fun getHandPosition(results: GestureRecognizerResult): Pair<Float, Float> {
-        val landmarks = results.landmarks().get(0) // Landmarken aus Hand 1
-        if (landmarks.isNotEmpty()) {
+    data class HandLandmarks(
+        val x0: Float,
+        val y0: Float,
+        val x8: Float,
+        val y8: Float,
+        val x9: Float,
+        val y9: Float)
+
+
+    fun getLandmarkPosition(results: GestureRecognizerResult): HandLandmarks {
+        val landmarksList = results.landmarks() // Landmarken aus Hand 1
+        if (landmarksList.isNotEmpty()) {
+            val landmarks = landmarksList[0]
             val landmark0 = landmarks[0] //Deklariere Landmarke #0 = Handwurzel
-            logPeriodically("Landmarke 0", "$landmark0")
+            val landmark8 = landmarks[8] // Indexfingerspitze
+            val landmark9 = landmarks[9] // Mittelfinger Metacarpophalangeal (MCP)
+            //logPeriodically("Landmarke 0", "$landmark0")
 
             // Berechne und skaliere x,y Koordinaten relativ zu imageView
-            val x = landmark0.x() * imageView.width
-            val y = landmark0.y() * imageView.height
+            val x0 = landmark0.x() * imageView.width
+            val y0 = landmark0.y() * imageView.height
+            val x8 = landmark8.x() * imageView.width
+            val y8 = landmark8.y() * imageView.height
+            val x9 = landmark9.x() * imageView.width
+            val y9 = landmark9.y() * imageView.height
 
-            return Pair(x,y)
+            return HandLandmarks(x0, y0, x8, y8, x9, y9)
         }
-        return Pair(0f, 0f) //Wenn keine Landmarken vorhanden
+        return HandLandmarks(0f, 0f, 0f, 0f, 0f, 0f) //Wenn keine Landmarken vorhanden
     }
+    // Quelle: https://shareg.pt/JLIdHmO
 
     private var lastLogTime = 0L // Initialisiere mit 0
     private fun logPeriodically(tag: String, message: String) {

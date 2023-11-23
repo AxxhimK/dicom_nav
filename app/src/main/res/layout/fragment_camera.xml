@@ -9,8 +9,8 @@
     <!--> //CardView für previewView und OverlayView mit runden Ecken-->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
         android:layout_gravity="end"
         android:layout_margin="5dp"
         app:cardCornerRadius="10dp"
@@ -82,6 +82,26 @@
             android:scaleType="matrix"
             app:shapeAppearanceOverlay="@style/RoundedImageView" />
 
+    </androidx.cardview.widget.CardView>
+
+    <!-- Miniatur Ansicht -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/miniatureCard"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center|right"
+        android:layout_margin="5dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@color/htwGrey">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/miniatureImageView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:scaleType="fitXY"
+        app:shapeAppearanceOverlay="@style/RoundedImageView" />
     </androidx.cardview.widget.CardView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
