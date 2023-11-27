@@ -6,20 +6,15 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
-import com.google.mediapipe.formats.proto.LandmarkProto.NormalizedLandmark
 import com.google.mediapipe.tasks.vision.core.RunningMode
 import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
 import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sqrt
-import android.util.Log
-import java.util.Locale.Category
 import kotlin.math.pow
 
 class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
-    //CameraFragment.OverlayViewListener
 
     private var results: GestureRecognizerResult? = null
     private var linePaint = Paint()
@@ -32,22 +27,15 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     private var thumbUp = false
     private var isNextImageCalled = false
 
+    private var lineColor: Int = 0
+    private var pointColor: Int = 0
+    private var htwOrangeColor: Int = 0
+    private var htwBlueColor: Int = 0
+    private var htwGreenColor: Int = 0
+
     init {
+        initColors()
         initPaints()
-    }
-
-
-    fun setThumbUp(value: Boolean) {
-        thumbUp = value
-        if (thumbUp) {
-            isNextImageCalled = false
-        }
-    }
-
-    fun setNextColor(color: Int) {
-        linePaint.color = color
-        pointPaint.color = color
-        invalidate()
     }
 
     fun clear() {
@@ -58,15 +46,29 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         initPaints()
     }
 
-    private fun initPaints() {
-        linePaint.color = ContextCompat.getColor(context!!, R.color.htwGreen)
-        linePaint.strokeWidth = LANDMARK_STROKE_WIDTH
-        linePaint.style = Paint.Style.STROKE
-
-        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwBlue)
-        pointPaint.strokeWidth = LANDMARK_POINT_WIDTH
-        pointPaint.style = Paint.Style.FILL
+    private fun initColors() {
+        htwGreenColor = ContextCompat.getColor(context!!, R.color.htwGreen)
+        htwBlueColor = ContextCompat.getColor(context!!, R.color.htwBlue)
+        htwOrangeColor = ContextCompat.getColor(context!!, R.color.htwOrange)
     }
+    private fun initPaints() {
+        lineColor = htwGreenColor
+        pointColor = htwBlueColor
+
+        linePaint.apply {
+            color = lineColor
+            strokeWidth = LANDMARK_STROKE_WIDTH
+            style = Paint.Style.STROKE
+        }
+
+        pointPaint.apply {
+            color = pointColor
+            strokeWidth = LANDMARK_POINT_WIDTH
+            style = Paint.Style.FILL
+        }
+    }
+
+
 
     override fun draw(canvas: Canvas) {
         super.draw(canvas)
@@ -80,14 +82,14 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
 
                     // Verändere Farbe bei Erkennung von Landmarke 4
                     if (i == 4) {
-                        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwOrange)
+                        pointPaint.color = htwOrangeColor
                         radius = LARGE_LANDMARK_POINT_RADIUS
                     } else if (i == 8) {
-                        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwBlue)
+                        pointPaint.color = htwBlueColor
                         radius = LARGE_LANDMARK_POINT_RADIUS
                     } else {
                         // Set the color for all other landmarks as green
-                        pointPaint.color = ContextCompat.getColor(context!!, R.color.htwGreen)
+                        pointPaint.color = htwGreenColor
                     }
 
                     canvas.drawCircle(x, y, radius, pointPaint)
@@ -162,13 +164,9 @@ class OverlayView(context: Context?, attrs: AttributeSet?) : View(context, attrs
         }
 
             companion object {
-                private const val LANDMARK_STROKE_WIDTH = 4F;
-                private const val LANDMARK_POINT_WIDTH = 4F;
-                private const val LANDMARK_POINT_RADIUS = 4F;
-                private const val LARGE_LANDMARK_POINT_RADIUS = 6F;
-            }
-
-            interface OverlayViewListener {
-                fun nextImage()
+                private const val LANDMARK_STROKE_WIDTH = 4F
+                private const val LANDMARK_POINT_WIDTH = 4F
+                private const val LANDMARK_POINT_RADIUS = 4F
+                private const val LARGE_LANDMARK_POINT_RADIUS = 6F
             }
         }

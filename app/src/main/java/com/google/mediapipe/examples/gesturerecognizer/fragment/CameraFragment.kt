@@ -88,6 +88,11 @@ class CameraFragment : Fragment(),
     private lateinit var miniatureImageView: ImageView
 
     private var currentZoomFactor = 1.0f
+    private var isZoomedIn: Boolean = false
+    private var lastLandmarkX8 = 0f
+    private var lastLandmarkY8 = 0f
+
+
 
     private fun loadBitmapFromResource(): List<Bitmap> {
         val fields = R.raw::class.java.fields //Felder aus Java Klasse
@@ -117,16 +122,13 @@ class CameraFragment : Fragment(),
         if (currentImageIndex in imageBitmaps.indices) {
             //Abrufen der aktuellen Bitmap aus imageBitmaps und speichern in originalBitmap
             val originalBitmap = imageBitmaps[currentImageIndex]
-            //val miniatureBitmap = displayMiniatureBitmap(originalBitmap, 200)
-            // originalBitmap Maße
-            Log.d("OriginalBitmap", "Original Bitmap - Width: ${originalBitmap.width}, Height: ${originalBitmap.height}")
 
             //Aufruf von fun createZoomedBitmap und Übergabe von originalBitmap, setzen in imageView
             imageView.setImageBitmap(originalBitmap)
         }
     }
 
-    private fun createZoomedBitmap(originalBitmap: Bitmap, landmarkX0: Float, landmarkY0: Float, zoomFactor: Float): Bitmap {
+    private fun createZoomedBitmap(originalBitmap: Bitmap, landmarkX0: Float, landmarkY0: Float, zoomFactor: Float, offsetX: Float = 0f, offsetY: Float = 0f): Bitmap {
         val originalWidth = originalBitmap.width
         val originalHeight = originalBitmap.height
 
@@ -137,8 +139,10 @@ class CameraFragment : Fragment(),
         // Begrenzen von x und y:
         // max -> deltaX,Y darf nicht negativ werden
         // min -> deltaX,Y darf nicht Maximalwert des originalBitmap überschreiten
-        val deltaX = max(0, min(originalWidth - zoomedWidth, (landmarkX0 - (zoomedWidth / 2)).toInt()))
-        val deltaY = max(0, min(originalHeight - zoomedHeight, (landmarkY0 - (zoomedHeight / 2)).toInt()))
+        // offsetX,Y für panning im gezoomten Bild
+
+        val deltaX = max(0, min(originalWidth - zoomedWidth, (landmarkX0 - (zoomedWidth / 2)+ offsetX).toInt()))
+        val deltaY = max(0, min(originalHeight - zoomedHeight, (landmarkY0 - (zoomedHeight / 2) + offsetY).toInt()))
 
         // Ausschneiden von Zoom-Bereich und hochskalieren auf Originalgröße der Bitmap
         // Filter an für mehr Schärfe
@@ -180,38 +184,62 @@ class CameraFragment : Fragment(),
     private fun updateMiniature(handLandmarks: HandLandmarks) {
         val originalBitmap = imageBitmaps[currentImageIndex]
         var miniatureBitmap = Bitmap.createScaledBitmap(originalBitmap, 200, 200, true)
-
-        //if (currentZoomFactor > 1.0f) {
-            miniatureBitmap = drawSquareOnMiniature(
+        miniatureBitmap = drawSquareOnMiniature(
                 originalBitmap,
                 miniatureBitmap,
-                handLandmarks.x8,
-                handLandmarks.y8
+                handLandmarks.x9,
+                handLandmarks.y9
             )
             //Update miniatureImageView
             miniatureImageView.setImageBitmap(miniatureBitmap)
         }
- //   }
 
+    // Erstelle gezoomte Bitmap und update isZoomedIn
     private fun applyZoom(indexPosX: Float, indexPosY: Float) {
-        val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex], indexPosX, indexPosY,
-            currentZoomFactor)
+        isZoomedIn = true
+        lastLandmarkX8 = indexPosX
+        lastLandmarkY8 = indexPosY
+        val zoomedBitmap = createZoomedBitmap(
+            imageBitmaps[currentImageIndex],
+            indexPosX,
+            indexPosY,
+            currentZoomFactor
+        )
         displayZoomedBitmap(zoomedBitmap)
     }
 
     private fun nextImage() {
         if (currentImageIndex < imageBitmaps.size - 1) {
             currentImageIndex++
-            displayBitmap()
+            applyCurrentZoomState()
             }
         }
 
     private fun previousImage() {
         if (currentImageIndex > 0) {
             currentImageIndex--
+            applyCurrentZoomState()
+        }
+    }
+
+    //Erhält den aktuellen Zoom-Zustand bei Bildnavi um gezoomt zu navigieren
+    private fun applyCurrentZoomState() {
+        //check ob gezoomt
+        if (isZoomedIn) {
+
+            val zoomedBitmap = createZoomedBitmap(
+                imageBitmaps[currentImageIndex],
+                lastLandmarkX8,
+                lastLandmarkY8,
+                currentZoomFactor
+            )
+            displayZoomedBitmap(zoomedBitmap)
+        } else {
             displayBitmap()
         }
     }
+
+    //https://shareg.pt/Y8SZFBS
 
     override fun onResume() {
         super.onResume()
@@ -540,11 +568,7 @@ class CameraFragment : Fragment(),
                                     }
 
                                     "Closed_Fist" -> {
-                                        //currentZoomFactor = 1.0f
-                                        //updateMiniature(handLandmarks)
-                                        displayBitmap()
-                                    //val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex],handLandmarks.x8, handLandmarks.y8, 2f)
-                                        //displayZoomedBitmap(zoomedBitmap)
+                                        //displayBitmap()
                                     }
 
                                     "Pointing_Up" -> {
@@ -556,14 +580,25 @@ class CameraFragment : Fragment(),
 
                                     "Victory" -> {
                                         applyZoom(handLandmarks.x8, handLandmarks.y8)
-                                        if (currentZoomFactor > 2f) {
+                                        if (currentZoomFactor > 1f) {
                                             currentZoomFactor -= 0.05f // Verringern von Zoom in 0.5 Schritten
                                         }
                                     }
 
                                     "Open_Palm" -> {
-                                        //Stoppt den Zoom wenn leer
-                                        //displayBitmap()
+                                        if (currentZoomFactor > 1.0f) {
+                                            val offsetX = handLandmarks.x8 - lastLandmarkX8
+                                            val offsetY = handLandmarks.y8 - lastLandmarkY8
+
+                                            // Update der letzten Landmarke
+                                            lastLandmarkX8 = handLandmarks.x8
+                                            lastLandmarkY8 = handLandmarks.y8
+
+                                            val zoomedBitmap = createZoomedBitmap(imageBitmaps[currentImageIndex], handLandmarks.x8, handLandmarks.y8, currentZoomFactor, offsetX, offsetY)
+                                            displayZoomedBitmap(zoomedBitmap)
+
+                                            // https://shareg.pt/W9aY4j9
+                                        }
                                     }
                                 }
                             }
