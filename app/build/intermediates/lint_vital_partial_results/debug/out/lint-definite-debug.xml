@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<incidents format="6" by="lint 7.3.0" type="incidents">
+
+    <incident
+        id="UnknownId"
+        severity="fatal"
+        message="The id &quot;`toolbar`&quot; is not defined anywhere.">
+        <location
+            file="${:app*debug*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="33"
+            column="13"
+            startOffset="1314"
+            endLine="33"
+            endColumn="48"
+            endOffset="1349"/>
+    </incident>
+
+</incidents>

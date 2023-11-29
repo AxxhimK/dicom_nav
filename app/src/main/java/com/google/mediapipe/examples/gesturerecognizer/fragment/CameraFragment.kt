@@ -20,6 +20,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -29,6 +30,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.findFragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
 import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
 import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
@@ -49,6 +51,9 @@ import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import kotlin.math.max
 import kotlin.math.min
+import com.bumptech.glide.annotation.GlideModule
+import com.bumptech.glide.module.AppGlideModule
+import com.bumptech.glide.request.RequestOptions
 
 class CameraFragment : Fragment(),
     GestureRecognizerHelper.GestureRecognizerListener {
@@ -83,6 +88,7 @@ class CameraFragment : Fragment(),
 
     private var lastImageChangeTime: Long = 0 // Stoppuhr fuer Bildwechsel (Long für ms)
     private lateinit var imageView: ImageView
+    private lateinit var indexTextView: TextView
 
     private var imageBitmaps: List<Bitmap> = mutableListOf() //Anstatt Res-IDs --> Neue Liste für Bitmap Objekte
     private lateinit var miniatureImageView: ImageView
@@ -125,6 +131,7 @@ class CameraFragment : Fragment(),
 
             //Aufruf von fun createZoomedBitmap und Übergabe von originalBitmap, setzen in imageView
             imageView.setImageBitmap(originalBitmap)
+            updateIndexTextView()
         }
     }
 
@@ -181,6 +188,7 @@ class CameraFragment : Fragment(),
         return miniatureBitmap
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun updateMiniature(handLandmarks: HandLandmarks) {
         val originalBitmap = imageBitmaps[currentImageIndex]
         var miniatureBitmap = Bitmap.createScaledBitmap(originalBitmap, 200, 200, true)
@@ -212,6 +220,7 @@ class CameraFragment : Fragment(),
         if (currentImageIndex < imageBitmaps.size - 1) {
             currentImageIndex++
             applyCurrentZoomState()
+            updateIndexTextView()
             }
         }
 
@@ -219,10 +228,16 @@ class CameraFragment : Fragment(),
         if (currentImageIndex > 0) {
             currentImageIndex--
             applyCurrentZoomState()
+            updateIndexTextView()
         }
     }
 
-    //Erhält den aktuellen Zoom-Zustand bei Bildnavi um gezoomt zu navigieren
+    private fun updateIndexTextView() {
+        val indexText = "Bildindex: ${currentImageIndex + 1} / ${imageBitmaps.size}"
+        indexTextView.text = indexText
+    }
+
+    //Erhält den aktuellen Zoom-Zustand bei Bildwechsel
     private fun applyCurrentZoomState() {
         //check ob gezoomt
         if (isZoomedIn) {
@@ -330,6 +345,8 @@ class CameraFragment : Fragment(),
         initBottomSheetControls()
         imageView = fragmentCameraBinding.imageView
         imageBitmaps = loadBitmapFromResource() //Aufruf der Bitmap Liste
+        indexTextView = view.findViewById(R.id.textViewIndex)
+        updateIndexTextView()
         displayBitmap()
         miniatureImageView = view.findViewById(R.id.miniatureImageView)
         displayMiniatureBitmap()

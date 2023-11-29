@@ -1,0 +1,1758 @@
+[
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000200.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000200.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000245.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000245.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000300.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000300.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000345.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000345.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000045.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000045.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000020.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000020.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000100.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000100.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000145.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000145.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000061.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000061.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000161.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000161.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000038.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000038.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000261.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000261.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000361.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000361.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000129.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000129.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000099.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000099.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000229.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000229.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000329.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000329.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000054.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000054.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000238.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000238.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000006.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000006.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000138.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000138.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000354.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000354.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000338.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000338.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000299.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000299.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000199.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000199.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000154.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000154.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000254.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000254.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_ge_logo.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/ge_logo.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000070.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000070.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000029.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000029.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000170.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000170.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000047.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000047.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000147.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000147.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000270.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000270.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/layout_activity_main.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000347.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000347.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000247.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000247.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000052.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000052.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000327.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000327.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000227.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000227.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000027.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000027.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000127.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000127.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000352.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000352.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000252.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000252.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000013.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000013.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000152.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000152.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000011.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000011.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000188.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000188.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000111.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000111.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000288.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000288.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000049.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000049.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000088.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000088.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000079.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000079.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000034.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000034.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000311.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000311.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000172.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000172.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000356.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000356.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000349.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000349.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000218.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000218.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000204.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000204.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000149.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000149.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000234.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000234.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000150.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000150.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000004.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000004.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000024.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000024.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000279.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000279.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000095.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000095.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_rounded_textview_background.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/rounded_textview_background.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000350.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000350.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000295.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000295.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000225.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000225.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000041.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000041.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000086.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000086.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000040.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000040.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000241.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000241.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000031.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000031.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000038.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000038.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000286.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000286.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000213.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000213.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000343.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000343.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000013.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000013.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000177.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000177.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/menu_menu_bottom_nav.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/menu/menu_bottom_nav.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000336.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000336.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000136.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000136.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000025.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000025.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000045.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000045.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000074.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000074.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000163.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000163.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000102.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000102.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000302.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000302.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000011.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000011.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000274.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000274.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000197.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000197.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000020.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000020.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000184.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000184.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000017.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000017.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000220.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000220.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000156.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000156.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000143.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000143.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000018.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000018.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000081.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000081.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000004.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000004.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000281.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000281.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000283.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000283.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000035.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000035.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000183.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000183.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000091.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000091.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000007.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000007.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000123.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000123.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000268.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000268.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000076.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000076.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000090.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000090.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000023.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000023.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000307.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000307.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000115.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000115.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000215.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000215.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000168.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000168.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000034.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000034.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000282.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000282.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000231.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000231.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000316.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000316.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000092.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000092.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000192.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000192.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000006.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000006.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000331.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000331.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000019.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000019.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/layout_item_gesture_recognizer_result.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/layout/item_gesture_recognizer_result.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000322.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000322.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000216.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000216.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000167.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000167.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000306.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000306.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000022.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000022.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000267.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000267.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_icn_chevron_up.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/icn_chevron_up.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000332.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000332.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000232.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000232.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000109.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000109.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000258.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000258.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000358.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000358.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000285.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000285.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000018.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000018.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000021.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000021.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000217.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000217.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000317.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000317.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000033.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000033.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000093.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000093.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000193.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000193.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000182.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000182.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000321.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000321.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000009.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000009.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000165.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000165.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000178.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000178.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000065.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000065.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000214.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000214.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000114.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000114.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000078.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000078.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000304.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000304.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000024.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000024.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000075.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000075.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000124.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000124.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000036.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000036.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_media_pipe_banner.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/media_pipe_banner.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000179.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000179.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000064.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000064.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000272.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000272.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000126.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000126.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000242.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000242.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000180.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000180.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000008.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000008.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000318.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000318.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000049.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000049.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000195.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000195.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000334.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000334.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000050.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000050.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000047.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000047.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000112.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000112.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000125.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000125.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000257.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000257.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000141.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000141.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000203.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000203.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/color_bg_nav_item.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/color/bg_nav_item.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000319.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000319.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000035.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000035.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/layout_fragment_gallery.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/layout/fragment_gallery.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000048.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000048.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000228.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000228.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000048.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000048.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000166.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000166.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000022.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000022.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000051.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000051.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000140.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000140.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000077.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000077.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000139.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000139.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000113.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000113.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000010.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000010.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000089.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000089.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000305.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000305.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000063.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000063.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000036.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000036.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000202.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000202.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000359.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000359.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000297.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000297.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000284.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000284.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000271.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000271.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000269.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000269.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000007.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000007.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_ic_minus.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/ic_minus.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000256.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000256.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000243.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000243.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000230.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000230.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000008.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000008.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000320.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000320.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000181.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000181.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000333.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000333.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000194.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000194.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000346.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000346.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000198.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000198.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000298.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000298.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000153.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000153.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000053.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000053.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000337.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000337.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000237.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000237.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000098.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000098.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000005.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000005.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000253.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000253.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000353.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000353.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000021.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000021.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/navigation_nav_graph.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000244.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000244.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000144.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000144.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000289.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000289.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000060.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000060.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000344.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000344.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000260.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000260.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000360.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000360.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000160.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000160.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000012.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000012.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000296.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000296.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000003.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000003.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000196.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000196.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000255.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000255.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000030.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000030.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000044.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000044.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000355.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000355.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000055.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000055.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000155.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000155.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000101.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000101.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000001.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000001.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000201.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000201.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_htw_banner.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/htw_banner.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000137.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000137.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000039.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000039.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_ic_baseline_add_24.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/ic_baseline_add_24.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000062.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000062.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000037.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000037.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000023.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000023.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000010.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000010.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000262.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000262.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000301.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000301.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000162.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000162.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000016.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000016.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000164.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000164.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000101.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000101.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000226.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000226.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000046.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000046.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000026.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000026.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000142.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000142.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000080.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000080.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000287.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000287.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000342.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000342.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000087.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000087.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000280.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000280.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000012.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000012.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000032.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000032.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000073.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000073.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000157.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000157.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000357.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000357.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000212.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000212.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000019.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000019.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000025.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000025.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000219.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000219.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000335.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000335.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000273.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000273.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000303.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000303.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000348.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000348.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000135.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000135.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000009.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000009.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000103.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000103.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000148.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000148.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000151.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000151.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000066.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000066.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000328.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000328.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000039.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000039.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000351.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000351.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000040.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000040.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000205.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000205.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000110.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000110.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000310.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000310.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000189.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000189.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000240.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000240.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000239.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000239.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000037.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000037.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000266.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000266.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000128.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000128.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000246.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000246.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000308.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000308.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000259.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000259.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000171.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000171.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000233.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000233.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000059.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000059.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000046.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000046.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000033.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000033.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000005.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000005.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000094.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000094.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000169.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000169.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000130.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000130.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000108.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000108.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000294.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000294.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000015.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000015.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000330.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000330.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000027.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000027.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000191.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000191.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000291.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000291.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000223.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000223.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000323.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000323.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000176.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000176.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000107.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000107.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000315.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000315.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000068.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000068.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000207.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000207.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000031.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000031.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000043.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000043.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000067.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000067.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000131.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000131.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000276.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000276.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000106.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000106.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000044.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000044.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000292.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000292.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000206.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000206.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000122.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000122.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000028.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000028.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000116.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000116.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000222.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000222.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000083.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000083.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000016.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000016.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000309.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000309.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000032.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000032.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000121.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000121.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000209.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000209.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000058.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000058.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000158.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000158.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000041.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000041.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000224.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000224.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000085.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000085.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000185.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000185.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000132.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000132.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000324.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000324.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000293.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000293.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000117.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000117.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000017.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000017.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000082.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000082.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000221.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000221.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000029.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000029.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000278.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000278.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000265.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000265.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000014.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000014.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000190.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000190.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_ic_plus.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/ic_plus.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000290.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000290.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_ic_baseline_photo_library_24.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/ic_baseline_photo_library_24.xml"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000026.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000026.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000275.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000275.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000175.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000175.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000314.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000314.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/layout_fragment_camera.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/layout/fragment_camera.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000326.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000326.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000134.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000134.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000072.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000072.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000211.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000211.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000001.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000001.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000264.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000264.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000042.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000042.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000249.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000249.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/drawable_ic_baseline_photo_camera_24.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/drawable/ic_baseline_photo_camera_24.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000057.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000057.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000104.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000104.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000187.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000187.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000312.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000312.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000015.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000015.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000263.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000263.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000325.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000325.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000002.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000002.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000250.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000250.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/layout_info_bottom_sheet.xml.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/layout/info_bottom_sheet.xml"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000341.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000341.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000119.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000119.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000173.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000173.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000186.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000186.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000248.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000248.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000003.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000003.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000096.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000096.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000235.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000235.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000313.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000313.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000251.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000251.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000028.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000028.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000002.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000002.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000014.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000014.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000277.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000277.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000210.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000210.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000174.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000174.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000340.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000340.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000236.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000236.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000339.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000339.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000084.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000084.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000146.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000146.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000133.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000133.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000159.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000159.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000097.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000097.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000071.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000071.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000120.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000120.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000118.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000118.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000105.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000105.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000056.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000056.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000069.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000069.jpg"
+    },
+    {
+        "merged": "com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000042.jpg.flat",
+        "source": "com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000042.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000030.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000030.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000208.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000208.jpg"
+    },
+    {
+        "merged": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-merged_res-50:/raw_image_000043.jpg.flat",
+        "source": "/Users/achimklenk/Documents/HTW/Bachelorarbeit/Bachelorarbeit-main/daemon/7.4/com.google.mediapipe.examples.gesturerecognizer.app-main-52:/raw/image_000043.jpg"
+    }
+]

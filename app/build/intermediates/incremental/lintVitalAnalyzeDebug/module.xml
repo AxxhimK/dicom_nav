@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/Users/achimklenk/Documents/HTW/Bachelorarbeit/dicom_nav/app"
+    name=":app"
+    type="APP"
+    maven="MP Gesture Recognizer:app:"
+    gradle="7.3.0"
+    buildFolder="build"
+    bootClassPath="/Users/achimklenk/Library/Android/sdk/platforms/android-32/android.jar:/Users/achimklenk/Library/Android/sdk/build-tools/30.0.3/core-lambda-stubs.jar"
+    javaSourceLevel="1.8"
+    compileTarget="android-32"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="debug"/>
+</lint-module>
