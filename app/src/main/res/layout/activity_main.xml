@@ -33,7 +33,8 @@
             android:layout_below="@+id/toolbar"
             app:itemIconTint="@color/htwGreen"
             app:itemTextColor="@color/htwGreen"
-            app:menu="@menu/menu_bottom_nav" />
+            app:menu="@menu/menu_bottom_nav"
+        tools:ignore="UnknownId" />
 
         <View
             android:id="@+id/view"

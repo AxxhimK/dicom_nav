@@ -1,21 +1,15 @@
 package com.google.mediapipe.examples.gesturerecognizer.fragment
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Canvas
 import android.graphics.Color
-import android.graphics.Matrix
 import android.graphics.Paint
-import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
-import android.os.Environment
-import android.provider.ContactsContract.Directory
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
@@ -27,33 +21,20 @@ import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.findFragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.google.mediapipe.examples.gesturerecognizer.GestureRecognizerHelper
 import com.google.mediapipe.examples.gesturerecognizer.MainViewModel
 import com.google.mediapipe.tasks.vision.gesturerecognizer.GestureRecognizerResult
-import com.google.mediapipe.tasks.vision.handlandmarker.HandLandmarker
-import com.google.mediapipe.examples.gesturerecognizer.OverlayView
-import com.google.mediapipe.examples.gesturerecognizer.fragment.CameraFragment
 import com.google.mediapipe.examples.gesturerecognizer.R
 import com.google.mediapipe.examples.gesturerecognizer.databinding.FragmentCameraBinding
 import com.google.mediapipe.tasks.vision.core.RunningMode
-import java.io.File
-import java.io.FileInputStream
-import java.io.IOException
-import java.lang.Float.max
-import java.lang.Float.min
 import java.util.*
 import java.util.concurrent.ExecutorService
 import java.util.concurrent.Executors
 import java.util.concurrent.TimeUnit
 import kotlin.math.max
 import kotlin.math.min
-import com.bumptech.glide.annotation.GlideModule
-import com.bumptech.glide.module.AppGlideModule
-import com.bumptech.glide.request.RequestOptions
 
 class CameraFragment : Fragment(),
     GestureRecognizerHelper.GestureRecognizerListener {
@@ -233,8 +214,9 @@ class CameraFragment : Fragment(),
     }
 
     private fun updateIndexTextView() {
-        val indexText = "Bildindex: ${currentImageIndex + 1} / ${imageBitmaps.size}"
-        indexTextView.text = indexText
+        val metaData = "Patient: Max Mustermann\nPatienten-ID: s0577479\nGeburtsdatum: 10.06.1993\nDiagnose: Pleuraerguss\n" +
+                "Bildindex: ${currentImageIndex + 1} / ${imageBitmaps.size}"
+        indexTextView.text = "$metaData"
     }
 
     //Erhält den aktuellen Zoom-Zustand bei Bildwechsel
@@ -674,15 +656,6 @@ class CameraFragment : Fragment(),
         return HandLandmarks(0f, 0f, 0f, 0f, 0f, 0f) //Wenn keine Landmarken vorhanden
     }
     // Quelle: https://shareg.pt/JLIdHmO
-
-    private var lastLogTime = 0L // Initialisiere mit 0
-    private fun logPeriodically(tag: String, message: String) {
-        val currentTime = System.currentTimeMillis()
-        if (currentTime - lastLogTime > 500) { // 1 Sekunde
-            Log.d(tag, message)
-            lastLogTime = currentTime // Aktualisiere
-        }
-    }
 
 
     override fun onError(error: String, errorCode: Int) {
